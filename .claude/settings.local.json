@@ -5,7 +5,8 @@
       "Bash(pip show *)",
       "Bash(pip install *)",
       "Bash(python plant_agent.py)",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Bash(python plant_agent.py plantas.csv)"
     ]
   }
 }
