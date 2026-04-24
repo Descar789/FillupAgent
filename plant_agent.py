@@ -7,10 +7,9 @@ Env vars requeridas:
   GEMINI_API_KEY
 
 Dependencias:
-  pip install firebase-admin anthropic google-genai python-slugify requests python-dotenv
+  pip install firebase-admin anthropic google-genai python-slugify python-dotenv
 """
 
-import base64
 import json
 import os
 import sys
@@ -19,12 +18,11 @@ import time
 from dotenv import load_dotenv
 load_dotenv()
 
-import requests
 from slugify import slugify
 
 import anthropic
 import firebase_admin
-from firebase_admin import credentials, firestore
+from firebase_admin import credentials, firestore, storage
 from google import genai
 from google.genai import types
 
@@ -68,10 +66,7 @@ Cuando te pida información sobre una planta, investígala con web_search y devu
 
 Usa exactamente los valores del enum para cada campo."""
 
-CLOUDINARY_CLOUD = "dfigwymjb"
-CLOUDINARY_PRESET = "ornaplant_plants"
-CLOUDINARY_FOLDER = "plantas"
-CLOUDINARY_URL = f"https://api.cloudinary.com/v1_1/{CLOUDINARY_CLOUD}/image/upload"
+STORAGE_BUCKET = "ornaplant-3ea0c.firebasestorage.app"
 
 
 # ---------------------------------------------------------------------------
@@ -84,7 +79,7 @@ def init_clients():
             sys.exit(f"[ERROR] Falta variable de entorno: {var}")
 
     cred = credentials.Certificate(os.environ["FIREBASE_SERVICE_ACCOUNT"])
-    firebase_admin.initialize_app(cred)
+    firebase_admin.initialize_app(cred, {"storageBucket": STORAGE_BUCKET})
 
     db = firestore.client()
     ant = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
@@ -99,7 +94,7 @@ def init_clients():
 
 def research_plant(nombre: str, ant: anthropic.Anthropic) -> dict:
     """Llama a Claude con web_search y devuelve dict con datos de la planta."""
-    print(f"  → Investigando '{nombre}' con Claude + web_search …")
+    print(f"  -> Investigando '{nombre}' con Claude + web_search ...")
 
     messages = [
         {
@@ -110,7 +105,7 @@ def research_plant(nombre: str, ant: anthropic.Anthropic) -> dict:
 
     for attempt in range(5):
         response = ant.messages.create(
-            model="claude-sonnet-4-20250514",
+            model="claude-sonnet-4-6",
             max_tokens=1024,
             system=SYSTEM_PROMPT,
             tools=[{"type": "web_search_20260209", "name": "web_search"}],
@@ -119,14 +114,20 @@ def research_plant(nombre: str, ant: anthropic.Anthropic) -> dict:
 
         if response.stop_reason == "end_turn":
             for block in response.content:
-                if hasattr(block, "text"):
+                if hasattr(block, "text") and block.text.strip():
                     text = block.text.strip()
                     if text.startswith("```"):
                         text = text.split("```")[1]
                         if text.startswith("json"):
                             text = text[4:]
-                    return json.loads(text)
-            raise ValueError(f"No se encontró texto en la respuesta para '{nombre}'")
+                    text = text.strip()
+                    if text.startswith("{"):
+                        return json.loads(text)
+            messages.append({"role": "assistant", "content": response.content})
+            messages.append({
+                "role": "user",
+                "content": "Continúa y entrega el JSON final ahora.",
+            })
 
         elif response.stop_reason == "pause_turn":
             messages.append({"role": "assistant", "content": response.content})
@@ -155,7 +156,7 @@ def validate_plant_data(data: dict, nombre: str) -> dict:
             continue
         val = data.get(campo, "")
         if val not in validos:
-            print(f"    [WARN] Campo '{campo}' inválido: '{val}' → usando '{defaults[campo]}'")
+            print(f"    [WARN] Campo '{campo}' inválido: '{val}' -> usando '{defaults[campo]}'")
             data[campo] = defaults[campo]
 
     if not isinstance(data.get("etiquetas"), list):
@@ -165,12 +166,12 @@ def validate_plant_data(data: dict, nombre: str) -> dict:
 
 
 # ---------------------------------------------------------------------------
-# Paso 2: Generar imagen con Gemini 2.0 Flash y subir a Cloudinary
+# Paso 2: Generar imagen con Gemini y subir a Firebase Storage
 # ---------------------------------------------------------------------------
 
 def generate_and_upload_image(nombre: str, nombre_cientifico: str, slug: str, gem: genai.Client) -> str:
-    """Genera imagen con Gemini 2.0 Flash, sube a Cloudinary y devuelve la URL."""
-    print(f"  → Generando imagen con Gemini 2.0 Flash: '{nombre_cientifico}' …")
+    """Genera imagen con Gemini, sube a Firebase Storage y devuelve la URL pública."""
+    print(f"  -> Generando imagen con Gemini: '{nombre_cientifico}' ...")
 
     prompt = (
         f"High quality botanical photograph of {nombre_cientifico} ({nombre}), "
@@ -178,7 +179,7 @@ def generate_and_upload_image(nombre: str, nombre_cientifico: str, slug: str, ge
     )
 
     response = gem.models.generate_content(
-        model="gemini-2.0-flash-preview-image-generation",
+        model="gemini-2.5-flash-image",
         contents=prompt,
         config=types.GenerateContentConfig(
             response_modalities=["IMAGE"],
@@ -186,32 +187,26 @@ def generate_and_upload_image(nombre: str, nombre_cientifico: str, slug: str, ge
     )
 
     image_bytes = None
-    mime_type = "image/png"
+    mime_type = "image/jpeg"
     for part in response.candidates[0].content.parts:
         if part.inline_data is not None:
             image_bytes = part.inline_data.data
-            mime_type = part.inline_data.mime_type or "image/png"
+            mime_type = part.inline_data.mime_type or "image/jpeg"
             break
 
     if not image_bytes:
         raise ValueError(f"Gemini no devolvió imagen para '{nombre}'")
 
-    print(f"  → Subiendo imagen a Cloudinary …")
-    b64 = base64.b64encode(image_bytes).decode()
-    data_uri = f"data:{mime_type};base64,{b64}"
+    ext = "jpg" if "jpeg" in mime_type else mime_type.split("/")[-1]
+    blob_path = f"plantas/{slug}.{ext}"
 
-    upload_response = requests.post(
-        CLOUDINARY_URL,
-        data={
-            "file": data_uri,
-            "upload_preset": CLOUDINARY_PRESET,
-            "folder": CLOUDINARY_FOLDER,
-            "public_id": slug,
-        },
-        timeout=60,
-    )
-    upload_response.raise_for_status()
-    return upload_response.json()["secure_url"]
+    print(f"  -> Subiendo a Firebase Storage: {blob_path} ...")
+    bucket = storage.bucket()
+    blob = bucket.blob(blob_path)
+    blob.upload_from_string(image_bytes, content_type=mime_type)
+    blob.make_public()
+
+    return blob.public_url
 
 
 # ---------------------------------------------------------------------------
@@ -240,7 +235,7 @@ def save_to_firestore(nombre: str, sku: str, plant_data: dict, imagen_url: str, 
         "imagenes":         [imagen_url],
     }
 
-    print(f"  → Guardando en Firestore (ID: {nombre_slug}) …")
+    print(f"  -> Guardando en Firestore (ID: {nombre_slug}) ...")
     db.collection("plantas").document(nombre_slug).set(doc)
     return nombre_slug
 
@@ -264,16 +259,16 @@ def main():
             # 1. Investigar
             raw_data = research_plant(nombre, ant)
             plant_data = validate_plant_data(raw_data, nombre)
-            print(f"    Categoría: {plant_data['categoria']} | Luz: {plant_data['luz']} | Riego: {plant_data['riego']}")
+            print(f"    Categoria: {plant_data['categoria']} | Luz: {plant_data['luz']} | Riego: {plant_data['riego']}")
 
-            # 2. Generar imagen con Gemini y subir a Cloudinary
+            # 2. Generar imagen con Gemini y subir a Firebase Storage
             nombre_slug = slugify(nombre)
             imagen_url = generate_and_upload_image(nombre, plant_data["nombreCientifico"], nombre_slug, gem)
             print(f"    URL imagen: {imagen_url}")
 
             # 3. Guardar en Firestore
             doc_id = save_to_firestore(nombre, sku, plant_data, imagen_url, db)
-            print(f"    ✓ Documento creado: plantas/{doc_id}")
+            print(f"    OK Documento creado: plantas/{doc_id}")
 
             results.append({"nombre": nombre, "sku": sku, "doc_id": doc_id, "ok": True})
 
@@ -286,8 +281,8 @@ def main():
 
     print("\n=== Resumen ===")
     for r in results:
-        estado = "✓" if r["ok"] else "✗"
-        print(f"  {estado} {r['sku']} {r['nombre']}" + (f" → plantas/{r['doc_id']}" if r["ok"] else f" → {r.get('error', '')}"))
+        estado = "OK" if r["ok"] else "XX"
+        print(f"  {estado} {r['sku']} {r['nombre']}" + (f" -> plantas/{r['doc_id']}" if r["ok"] else f" -> {r.get('error', '')}"))
 
 
 if __name__ == "__main__":

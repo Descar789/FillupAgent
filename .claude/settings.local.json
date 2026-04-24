@@ -4,7 +4,8 @@
       "Skill(claude-api)",
       "Bash(pip show *)",
       "Bash(pip install *)",
-      "Bash(python plant_agent.py)"
+      "Bash(python plant_agent.py)",
+      "Bash(python -c ' *)"
     ]
   }
 }

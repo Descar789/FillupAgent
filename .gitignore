@@ -208,3 +208,7 @@ __marimo__/
 
 # AgentOps session artifacts
 .agents/
+
+.env
+serviceAccount.json
+*service_account*
