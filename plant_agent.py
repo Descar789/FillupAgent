@@ -45,10 +45,40 @@ from google.genai import types
 # ---------------------------------------------------------------------------
 
 DEFAULT_CSV = "plantas_para_agente.csv"
-LIMIT_ROWS = 5
+LIMIT_ROWS = None  # None = procesar todas
+CHECKPOINT_EVERY = 10
 UMBRAL_POPULAR = int(os.environ.get("UMBRAL_POPULAR", "2000"))
 
 LOG_PATH = "proceso_log.csv"
+
+LOG_FIELDS = [
+    "indice", "SKU", "nombre", "status", "paso", "razon",
+    "error_kind", "tokens_entrada", "tokens_salida", "traceback",
+]
+
+# error_kind: "logical" no reintentable, "transient" reintentable, "" cuando ok
+TRANSIENT_HINTS = (
+    "timeout", "deadline", "unavailable", "connection", "connection error",
+    "overload", "503", "429", "5xx", "cloudinary", "upload failed",
+    "firebase", "firestore", "ssl", "reset", "temporarily", "internal error",
+    "imagen falló", "gemini no devolvió",
+)
+LOGICAL_HINTS = (
+    "no identificada", "ambiguo", "ambigu", "sin nombre científico",
+    "sin nombre cientifico", "category mismatch", "categoría inválida",
+    "categoria invalida", "planta diferente", "confusión", "confusion",
+)
+
+
+def classify_error(razon: str) -> str:
+    r = razon.lower()
+    for h in LOGICAL_HINTS:
+        if h in r:
+            return "logical"
+    for h in TRANSIENT_HINTS:
+        if h in r:
+            return "transient"
+    return "transient"  # default: reintentar errores desconocidos
 
 VALID = {
     "categoria":      {"ornamental", "suculenta", "árbol", "interior", "exterior", "medicinal"},
@@ -164,7 +194,7 @@ def _extract_json(text: str) -> dict:
 def research_plant(nombre: str, gem: genai.Client) -> tuple[dict, int, int]:
     """Investiga planta con Gemini 1.5 Flash + Google Search grounding.
     Devuelve (data, input_tokens, output_tokens). data puede tener identificada=False."""
-    print(f"  -> Investigando '{nombre}' con Gemini 1.5 Flash + Google Search ...")
+    print(f"  -> Investigando '{nombre}' con Gemini 2.5 Flash + Google Search ...")
 
     prompt = (
         f"{SYSTEM_PROMPT}\n\n"
@@ -172,12 +202,12 @@ def research_plant(nombre: str, gem: genai.Client) -> tuple[dict, int, int]:
     )
 
     config = types.GenerateContentConfig(
-        tools=[types.Tool(google_search_retrieval=types.GoogleSearchRetrieval())],
+        tools=[types.Tool(google_search=types.GoogleSearch())],
         temperature=0.2,
     )
 
     response = gem.models.generate_content(
-        model="gemini-1.5-flash",
+        model="gemini-2.5-flash",
         contents=prompt,
         config=config,
     )
@@ -234,36 +264,68 @@ def pick_container(variaciones: list[str]) -> str:
     return "bolsa"
 
 
-def generate_and_upload_image(nombre_cientifico: str, container: str,
-                              public_id: str, gem: genai.Client) -> str:
-    if container == "maceta":
-        prompt = (
-            f"professional botanical photo of {nombre_cientifico} in a plain black "
-            "plastic nursery pot, white background, studio lighting, high quality, "
-            "no decorations, no patterns"
-        )
-    else:
-        prompt = (
-            f"professional botanical photo of {nombre_cientifico} in a plain black "
-            "plastic nursery bag, white background, studio lighting, high quality, "
-            "no decorations, no patterns"
-        )
+def _build_image_prompts(nombre_cientifico: str, container: str) -> list[str]:
+    receptaculo = "plastic nursery pot" if container == "maceta" else "plastic nursery bag"
+    primary = (
+        f"professional botanical photo of {nombre_cientifico} in a plain black "
+        f"{receptaculo}, white background, studio lighting, high quality, "
+        "no decorations, no patterns"
+    )
+    fallback = (
+        f"simple stock photo of a healthy {nombre_cientifico} plant placed in a "
+        f"black {receptaculo}, neutral seamless white studio background, soft "
+        "natural lighting, centered composition, realistic, no text, no watermark"
+    )
+    return [primary, fallback]
 
-    print(f"  -> Generando imagen ({container}) con Gemini ...")
+
+def _try_generate_image(prompt: str, gem: genai.Client) -> tuple[bytes | None, str]:
+    """Devuelve (image_bytes, info). info describe por qué falló si bytes es None."""
     response = gem.models.generate_content(
         model="gemini-2.5-flash-image",
         contents=prompt,
         config=types.GenerateContentConfig(response_modalities=["IMAGE"]),
     )
 
-    image_bytes = None
-    for part in response.candidates[0].content.parts:
+    candidates = response.candidates or []
+    if not candidates:
+        return None, "sin candidates"
+
+    cand = candidates[0]
+    finish = getattr(cand, "finish_reason", None)
+    if cand.content is None or not getattr(cand.content, "parts", None):
+        return None, f"content vacío (finish_reason={finish})"
+
+    for part in cand.content.parts:
         if part.inline_data is not None:
-            image_bytes = part.inline_data.data
+            return part.inline_data.data, "ok"
+
+    return None, f"sin inline_data (finish_reason={finish})"
+
+
+def generate_and_upload_image(nombre_cientifico: str, container: str,
+                              public_id: str, gem: genai.Client) -> str:
+    prompts = _build_image_prompts(nombre_cientifico, container)
+    image_bytes = None
+    last_info = ""
+
+    for i, prompt in enumerate(prompts, start=1):
+        label = "principal" if i == 1 else "fallback"
+        print(f"  -> Generando imagen ({container}, intento {i}/{len(prompts)} {label}) con Gemini ...")
+        try:
+            image_bytes, info = _try_generate_image(prompt, gem)
+        except Exception as e:
+            last_info = f"excepción intento {i}: {e}"
+            print(f"    [WARN] {last_info}")
+            continue
+
+        if image_bytes:
             break
+        last_info = f"intento {i}: {info}"
+        print(f"    [WARN] {last_info}")
 
     if not image_bytes:
-        raise ValueError("Gemini no devolvió imagen")
+        raise ValueError(f"Gemini no devolvió imagen tras {len(prompts)} intentos. {last_info}")
 
     print(f"  -> Subiendo a Cloudinary: {CLOUDINARY_FOLDER}/{public_id} ...")
     result = cloudinary.uploader.upload(
@@ -306,6 +368,91 @@ def save_to_firestore(plant: dict, plant_data: dict, imagen_url: str | None, db)
 # Main
 # ---------------------------------------------------------------------------
 
+def migrate_old_log(path: str, output: str | None = None) -> None:
+    """Si log no tiene 'error_kind', lo migra in-place agregando columna clasificada."""
+    if not os.path.isfile(path):
+        return
+    with open(path, newline="", encoding="utf-8") as f:
+        first = f.readline()
+    if "error_kind" in first:
+        if output and output != path:
+            os.replace(path, output)
+        return
+
+    rows_out = []
+    with open(path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            status = (row.get("status") or "").strip()
+            razon = row.get("razon") or ""
+            # Migrar status legacy
+            if status == "error":
+                status = "saltada"
+            if status == "sin_imagen":
+                status = "saltada"
+                if not razon:
+                    razon = "imagen falló (legacy sin_imagen)"
+            kind = ""
+            if status == "saltada":
+                kind = classify_error(razon)
+            rows_out.append({
+                "indice":         row.get("indice", ""),
+                "SKU":            row.get("SKU", ""),
+                "nombre":         row.get("nombre", ""),
+                "status":         status,
+                "paso":           row.get("paso", ""),
+                "razon":          razon,
+                "error_kind":     kind,
+                "tokens_entrada": row.get("tokens_entrada", "0"),
+                "tokens_salida":  row.get("tokens_salida", "0"),
+                "traceback":      row.get("traceback", ""),
+            })
+
+    target = output or path
+    with open(target, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=LOG_FIELDS)
+        w.writeheader()
+        w.writerows(rows_out)
+    print(f"[MIGRACIÓN] {path} -> {target}: {len(rows_out)} filas migradas con error_kind")
+
+
+def load_existing_log(path: str) -> dict[str, dict]:
+    """Devuelve dict sku -> última fila registrada."""
+    if not os.path.isfile(path):
+        return {}
+    last_by_sku: dict[str, dict] = {}
+    with open(path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            sku = (row.get("SKU") or "").strip()
+            if sku:
+                last_by_sku[sku] = row
+    return last_by_sku
+
+
+def should_skip_existing(entry: dict) -> tuple[bool, str]:
+    """Devuelve (skip, motivo)."""
+    if not entry:
+        return False, ""
+    status = entry.get("status", "")
+    if status == "ok":
+        return True, "ya procesada (ok)"
+    if status == "saltada":
+        kind = entry.get("error_kind", "")
+        if kind == "logical":
+            return True, f"saltada lógica previa: {entry.get('razon', '')[:80]}"
+    return False, ""
+
+
+def firestore_doc_exists(db, sku: str) -> bool:
+    try:
+        snap = db.collection("plantas").document(sku).get()
+        return snap.exists
+    except Exception as e:
+        print(f"  [WARN] no se pudo verificar Firestore para {sku}: {e}")
+        return False
+
+
 def main():
     print("=== plant_agent.py ===\n")
 
@@ -320,26 +467,93 @@ def main():
         plants = plants[:LIMIT_ROWS]
         print(f"Procesando solo las primeras {len(plants)} (modo prueba)\n")
 
+    # Migrar log viejo si schema cambió (in-place, conservar datos)
+    migrate_old_log(LOG_PATH)
+    # Si existe .bak de migración previa fallida, fusionar al log actual
+    bak_path = LOG_PATH + ".bak"
+    if os.path.isfile(bak_path) and not os.path.isfile(LOG_PATH):
+        print(f"[MIGRACIÓN] Recuperando datos de {bak_path} -> {LOG_PATH}")
+        migrate_old_log(bak_path, output=LOG_PATH)
+
+    # Reanudación: leer log previo
+    existing = load_existing_log(LOG_PATH)
+    if existing:
+        ya_ok = sum(1 for r in existing.values() if r.get("status") == "ok")
+        ya_logical = sum(1 for r in existing.values()
+                         if r.get("status") == "saltada" and r.get("error_kind") == "logical")
+        ya_retry = sum(1 for r in existing.values()
+                       if r.get("status") == "saltada" and r.get("error_kind") != "logical")
+        ya_retry += sum(1 for r in existing.values() if r.get("status") == "error")
+        pendientes_total = len(plants) - ya_ok - ya_logical
+        print(f"Reanudando proceso desde '{LOG_PATH}'...")
+        print(f"  Ya procesadas (ok):           {ya_ok}")
+        print(f"  Saltadas lógicas (no retry):  {ya_logical}")
+        print(f"  Reintentos pendientes:        {ya_retry}")
+        print(f"  Pendientes totales:           {max(0, pendientes_total)}\n")
+    else:
+        print("No hay log previo. Empezando desde cero.\n")
+
     db, gem = init_clients()
 
-    log_rows = []
+    # Log append-only
+    nuevo = not os.path.isfile(LOG_PATH)
+    log_file = open(LOG_PATH, "a", newline="", encoding="utf-8")
+    log_writer = csv.DictWriter(log_file, fieldnames=LOG_FIELDS)
+    if nuevo:
+        log_writer.writeheader()
+        log_file.flush()
+
+    def write_log(row):
+        full = {k: row.get(k, "") for k in LOG_FIELDS}
+        log_writer.writerow(full)
+        log_file.flush()
+
     total_in = 0
     total_out = 0
     ok_count = 0
-    skip_count = 0
+    skip_logical_count = 0
+    skip_transient_count = 0
+    skipped_already = 0
+    skipped_firestore = 0
 
-    for plant in plants:
+    for idx, plant in enumerate(plants, start=1):
         sku = plant["sku"]
         nombre = plant["nombre"]
+        print(f"\n[{idx}/{len(plants)}] [{sku}] {nombre}")
+
+        # 1. Verificar log previo
+        prev = existing.get(sku)
+        skip, motivo = should_skip_existing(prev)
+        if skip:
+            skipped_already += 1
+            print(f"  [SKIP] {motivo}")
+            continue
+
+        # 2. Verificar Firestore
+        if firestore_doc_exists(db, sku):
+            print(f"  [SKIP] ya existe en Firestore — registrando en log y saltando")
+            write_log({
+                "indice": idx, "SKU": sku, "nombre": nombre,
+                "status": "ok", "paso": "", "razon": "ya existía en Firestore",
+                "error_kind": "", "tokens_entrada": 0, "tokens_salida": 0,
+                "traceback": "",
+            })
+            skipped_firestore += 1
+            ok_count += 1
+            continue
+
+        # 3. Procesar
         in_tok = 0
         out_tok = 0
         status = "saltada"
+        paso = ""
         razon = ""
-
-        print(f"\n[{sku}] {nombre}")
+        tb_str = ""
+        error_kind = ""
 
         try:
-            # 1. Investigar
+            # Investigar
+            paso = "investigacion"
             try:
                 raw_data, in_tok, out_tok = research_plant(nombre, gem)
             except Exception as e:
@@ -347,19 +561,36 @@ def main():
                 raise
 
             if not raw_data.get("identificada", True):
+                paso = "identificacion"
                 razon = f"no identificada: {raw_data.get('razon', 'sin razón')}"
-                print(f"  [SKIP] {razon}")
+                error_kind = "logical"
+                print(f"  [SKIP lógico] {razon}")
             else:
+                # Validar nombre científico
+                nombre_cientifico = (raw_data.get("nombreCientifico") or "").strip()
+                if not nombre_cientifico or len(nombre_cientifico) < 3:
+                    paso = "validacion"
+                    razon = "sin nombre científico confiable"
+                    error_kind = "logical"
+                    raise ValueError(razon)
+
+                # Validar categoría
+                cat = (raw_data.get("categoria") or "").strip()
+                if cat and cat not in VALID["categoria"]:
+                    paso = "validacion"
+                    razon = f"categoría inválida devuelta: '{cat}'"
+                    error_kind = "logical"
+                    raise ValueError(razon)
+
+                paso = "validacion"
                 plant_data = validate_plant_data(raw_data, nombre)
 
-                # Etiqueta popular: por columna Popular del CSV
-                if plant["popular"]:
-                    if "popular" not in plant_data["etiquetas"]:
-                        plant_data["etiquetas"].append("popular")
+                if plant["popular"] and "popular" not in plant_data["etiquetas"]:
+                    plant_data["etiquetas"].append("popular")
 
-                # 2. Imagen
+                # Imagen
+                paso = "imagen"
                 container = pick_container(plant["variaciones"])
-                imagen_url = None
                 try:
                     public_id = slugify(sku)
                     imagen_url = generate_and_upload_image(
@@ -367,10 +598,10 @@ def main():
                     )
                 except Exception as e:
                     razon = f"imagen falló: {e}"
-                    print(f"  [SKIP planta] {razon}")
                     raise
 
-                # 3. Firestore
+                # Firestore
+                paso = "firestore"
                 try:
                     save_to_firestore(plant, plant_data, imagen_url, db)
                 except Exception as e:
@@ -378,50 +609,58 @@ def main():
                     raise
 
                 status = "ok"
+                paso = ""
                 ok_count += 1
                 print(f"  [OK] plantas/{sku}")
 
         except Exception as e:
+            status = "saltada"
             if not razon:
                 razon = f"error inesperado: {e}"
-            traceback.print_exc()
+            if not error_kind:
+                error_kind = classify_error(razon)
+            tb_str = traceback.format_exc().replace("\n", " | ")
+            print(f"  [SKIP {error_kind}] paso={paso} razon={razon}")
 
-        if status != "ok":
-            skip_count += 1
+        if status == "saltada":
+            if error_kind == "logical":
+                skip_logical_count += 1
+            else:
+                skip_transient_count += 1
 
         total_in += in_tok
         total_out += out_tok
-        print(f"[{sku}] {nombre} -> {status} | tokens entrada: {in_tok} | tokens salida: {out_tok}")
 
-        log_rows.append({
-            "SKU": sku,
-            "nombre": nombre,
-            "status": status,
-            "razon": razon,
-            "tokens_entrada": in_tok,
-            "tokens_salida": out_tok,
+        write_log({
+            "indice": idx, "SKU": sku, "nombre": nombre,
+            "status": status, "paso": paso, "razon": razon,
+            "error_kind": error_kind,
+            "tokens_entrada": in_tok, "tokens_salida": out_tok,
+            "traceback": tb_str,
         })
+
+        if idx % CHECKPOINT_EVERY == 0 and idx < len(plants):
+            print(f"\n--- CHECKPOINT {idx}/{len(plants)}: "
+                  f"{ok_count} ok, {skip_logical_count} lógicas, "
+                  f"{skip_transient_count} transient, {skipped_already} ya hechas ---\n")
 
         if plant != plants[-1]:
             time.sleep(2)
 
-    # Log CSV
-    with open(LOG_PATH, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=["SKU", "nombre", "status", "razon",
-                                                "tokens_entrada", "tokens_salida"])
-        writer.writeheader()
-        writer.writerows(log_rows)
+    log_file.close()
 
-    # Resumen
-    cost = (total_in / 1_000_000) * 0.075 + (total_out / 1_000_000) * 0.30
+    cost = (total_in / 1_000_000) * 0.30 + (total_out / 1_000_000) * 2.50
     print("\n=== Resumen ===")
-    print(f"Total procesadas: {len(plants)}")
-    print(f"Exitosas:         {ok_count}")
-    print(f"Saltadas:         {skip_count}")
+    print(f"Total filas CSV:                {len(plants)}")
+    print(f"Saltadas por log previo:        {skipped_already}")
+    print(f"Saltadas por Firestore previo:  {skipped_firestore}")
+    print(f"Procesadas ok esta corrida:     {ok_count - skipped_firestore}")
+    print(f"Saltadas lógicas (no retry):    {skip_logical_count}")
+    print(f"Saltadas transient (retry):     {skip_transient_count}")
     print(f"Tokens entrada:   {total_in}")
     print(f"Tokens salida:    {total_out}")
-    print(f"Costo estimado:   ${cost:.6f} USD (Gemini 1.5 Flash, sin grounding fees)")
-    print(f"Log guardado:     {LOG_PATH}")
+    print(f"Costo estimado:   ${cost:.6f} USD (Gemini 2.5 Flash)")
+    print(f"Log:              {LOG_PATH}")
 
 
 if __name__ == "__main__":

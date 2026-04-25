@@ -1,6 +1,1 @@
-SKU,nombre,status,razon,tokens_entrada,tokens_salida
-AAB01L003,Arbol De La Abundancia,ok,,23283,1003
-AAC03L003,Aralea Arboricola Capela,ok,,29049,1484
-AAD06L003,Aralea Arboricola Dasly,ok,,35859,1537
-AAD10L006,Aralea Arboricola Dazzle,ok,,34102,1495
-AAD11P013,Aralea Arboricola Dazlle,ok,,29847,1303
+indice,SKU,nombre,status,paso,razon,error_kind,tokens_entrada,tokens_salida,traceback

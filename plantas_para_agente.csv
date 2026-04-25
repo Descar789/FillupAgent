@@ -1,593 +1,494 @@
-SKU,nombre_limpio,Existencia,Ventas,Popular,variaciones
-AAM04L006,Avelia Amarilla,2,4621,si,bolsa 4 litros
-AAM08L124,Acacia Amarilla,15,4,no,bolsa 8 litros
-AAM45L009,Acacia Bicapsularis,2,14,no,bolsa 45 litros
-AAR11P145,Aloe Arborecente Cosmos,6,2,no,maceta negra 11 pulgadas
-AAT06L003,Aralea Arboricola Trinet,28,1400,si,bolsa 6 litros
-AAV03L003,Aralea Arboricola Verde,150,2747,si,bolsa 3 litros|bolsa 6 litros
-AAZ20L009,Agave Azul,25,180,no,bolsa 20 litros|bolsa 3 litros
-ABB04L077,Arandano Blue Berry,5,1087,si,bolsa 4 litros
-ABI20L009,Acacia Bicampusularis,1,3,no,bolsa 20 litros
-ACA01L124,Acanto,143,471,si,bolsa 1 litros|bolsa 4 litros
-ACA10L145,Aloe Camperii,10,0,no,bolsa 10 litros
-ACA11P145,Aloe Camperi,10,0,no,maceta negra 11 pulgadas
-ACA30L006,Arboricola Capela,18,2,no,bolsa 30 litros
-ACH10P145,Aloe Chabaudii,9,0,no,maceta negra 10 pulgadas
-ACI20L009,Agave Cimarron,24,15,no,bolsa 20 litros
-ACO04L145,Aloe Cobre,52,0,no,bolsa 4 litros
-ALO10L009,Alocasia Cuculata,30,248,si,bolsa 10 litros|maceta negra 15 pulgadas
-ADE03L001,Adelfa Enana Fiusha,156,107,no,bolsa 3 litros
-ADE03L006,Adelfa Surt.,40,13323,si,bolsa 3 litros
-ADE03L009,Adelfa,89,17180,si,bolsa 3 litros|bolsa 10 litros
-ADE06P001,Adenium Rosa,114,3096,si,maceta negra 6 pulgadas
-ADE08L001,Adenium Bco/Rjo,69,4302,si,bolsa 8 litros
-ADE08P001,Adenium Injerto,2,2439,si,maceta negra 8 pulgadas
-ADE12P001,Adenium,2,66,no,maceta negra 12 pulgadas
-ADI04P121,Arbol Del Dinero,30,371,si,maceta negra 4 pulgadas|bolsa 10 litros
-ADI11P145,Aloe Dieri,9,0,no,maceta negra 11 pulgadas
-AEL03L006,Aralea Elegantisima Comp.,48,582,si,bolsa 3 litros
-AEL08L006,Aralea Elegantisima,30,2258,si,bolsa 8 litros|bolsa 20 litros|bolsa 60 litros
-AEN02L010,Agapando Enano,106,10084,si,bolsa 2 litros
-AFF03P126,Affini,6,0,no,maceta negra 3 pulgadas
-AFR30L105,Arrayan De Fruta,9,33,no,bolsa 30 litros|bolsa 6 litros
-AGA01L125,Agazania,27,5023,si,bolsa 1 litros
-AGA04L010,Agapando Azul,111,6082,si,bolsa 4 litros
-AGA04L105,Agapando,25,298,si,bolsa 4 litros
-AGA50L157,Agave Americano,6,334,si,bolsa 50 litros
-AGI10P145,Agave Gipsofilam,2,0,no,maceta negra 10 pulgadas
-AGL06P168,Aglonema Col,111,154,no,maceta negra 6 pulgadas
-AGL10L006,Agloneama Silver Q,13,2,no,bolsa 10 litros
-AHA06L115,Aguacate Hass,21,314,si,bolsa 6 litros|bolsa 35 litros
-AHI04L077,Amohena Comun,3,581,si,bolsa 4 litros
-AHU04L129,Ahuehuete,50,61,no,bolsa 4 litros
-AJE01L125,Ajenjo,3,612,si,bolsa 1 litros
-ALC10L009,Alcatraz,30,460,si,bolsa 10 litros|maceta negra 8 pulgadas
-ALM04L115,Almendro,50,40,no,bolsa 4 litros
-ALO20L116,Acacia Lluvia De Oro,6,25,no,bolsa 20 litros
-ALO65L140,Acasia Lluvia De Oro,2,10,no,bolsa 65 litros
-AMA04L009,Amaryllis,2,75,no,bolsa 4 litros
-AMA06P134,Amazonica,5,211,si,maceta negra 6 pulgadas
-AMA08L124,Acacia Mariposa,15,3,no,bolsa 8 litros
-AMA60L129,Amate,3,2,no,bolsa 60 litros
-AMG06P001,Aralea Arboricola Mini Golden,88,552,si,maceta negra 6 pulgadas
-AMG06P013,Aralea Mini Gold,96,99,no,maceta negra 6 pulgadas
-AMI06L003,Arboricola Mini Gol,43,902,si,bolsa 6 litros
-AMO06L116,Amohena,13,95,no,bolsa 6 litros
-AMO45L200,Acacia Morada,1,5,no,bolsa 45 litros
-ANT07P200,Anthurio,35,131,no,maceta negra 7 pulgadas
-ANT08P006,Anthurio Oaxaqueño,35,238,si,maceta negra 8 pulgadas|maceta negra 10 pulgadas
-APA08L006,Ave De Paraiso,78,3681,si,bolsa 8 litros|bolsa 4 litros|bolsa 45 litros|maceta negra 11 pulgadas
-APA60L120,Ave De Paraiso Gigante,2,2,no,bolsa 60 litros
-API04P126,Aloe Pink,4,20,no,maceta negra 4 pulgadas
-APL02L200,Arbusto De Playa,50,905,si,bolsa 2 litros
-APU15L145,Agave Pulpo,7,10,no,bolsa 15 litros|bolsa 4 litros
-ARE07P125,Aretillo,4,330,si,maceta negra 7 pulgadas|maceta negra 10 pulgadas
-ARU30L170,Acer Rubrum,2,4,no,bolsa 30 litros
-ASH06L169,Aralea Sheflera,22,13,no,bolsa 6 litros
-ASH20L169,Aralea Schefflera,20,28,no,bolsa 20 litros
-ASH60L105,Aralea Shefflera,1,15,no,bolsa 60 litros
-ASI11P001,Aralea Siboldi,10,122,no,maceta negra 11 pulgadas|bolsa 4 litros
-ASI10L010,Aralia Siboldi,64,95,no,bolsa 10 litros
-ASI80L161,Acer Silver,4,0,no,bolsa 80 litros
-ASP06P130,Aspidistra,53,1410,si,maceta negra 6 pulgadas
-AST03L124,Aster,150,42,no,bolsa 3 litros
-AST04L119,Astronomica,30,228,si,bolsa 4 litros|bolsa 60 litros|bolsa 8 litros
-AST06L145,Aloe Striata,7,1,no,bolsa 6 litros
-AST08L119,Astronomica Verde Flor Rja,29,986,si,bolsa 8 litros
-AST11L013,Astronomica Black Colores,9,3,no,bolsa 11 litros
-AST30L119,Astronomica Verde,33,230,si,bolsa 30 litros
-ATO08P162,Agave Tobala,7,1,no,maceta negra 8 pulgadas
-AVE04L006,Avelia Verde,50,5904,si,bolsa 4 litros|bolsa 3 litros
-AVO06L145,Agave Voley,20,11,no,bolsa 6 litros
-AVR10P107,Agave Victoria Regina,8,604,si,maceta negra 10 pulgadas
-AZA30L115,Azalea De Copa,6,66,no,bolsa 30 litros|bolsa 8 litros
-AZA10L115,Azalea Arbusto,61,67,no,bolsa 10 litros
-AZA30L170,Azalea Copa,5,4,no,bolsa 30 litros
-AZA40L158,Azalea Topiario,4,1,no,bolsa 40 litros|bolsa 70 litros
-AZA50L158,Azalia Topiario,4,1,no,bolsa 50 litros
-BAR01L154,Barol Ins. Org,4,7,no,bolsa 1 litros
-BAR01L200,Buxus Arrayan,200,6057,si,bolsa 1 litros
-BAR06L170,Buxus Arrayan Bola,78,287,si,bolsa 6 litros
-BBI04P126,Blue Bier,12,5,no,maceta negra 4 pulgadas|maceta negra 6 pulgadas
-BCU07L114,Bugambilia Cuautla,60,376,si,bolsa 7 litros
-BEA03P144,Beaucarne,50,20,no,maceta negra 3 pulgadas
-BEA15L117,Beaucarnea,17,48,no,bolsa 15 litros|bolsa 30 litros|maceta negra 14 pulgadas|bolsa 10 litros
-BEL06P006,Belen,4,4462,si,maceta negra 6 pulgadas
-BER01L125,Bergenia,14,674,si,bolsa 1 litros
-BES02L125,Bandera Española,14,497,si,bolsa 2 litros
-BIG08L105,Bignonia Morada,12,413,si,bolsa 8 litros
-BMA06L009,Black Magic,2,128,no,bolsa 6 litros
-BMI20L132,Bugambilia Minimorada,4,8,no,bolsa 20 litros
-BMM10L108,Bugambilia Mini Morada,35,0,no,bolsa 10 litros
-BOM80L129,Bombax Bco,2,0,no,bolsa 80 litros
-BPA07L128,Bugambilia Paloma,25,2710,si,bolsa 7 litros
-BPL06L006,Bambu Plumoso,114,1369,si,bolsa 6 litros|bolsa 30 litros
-BRO06P121,Bromelia Pink,40,127,no,maceta negra 6 pulgadas
-BRO08P109,Bromelia Aechmea,5,313,si,maceta negra 8 pulgadas
-BRU04L010,Brunfelsia,43,86,no,bolsa 4 litros|bolsa 20 litros|bolsa 10 litros|bolsa 30 litros
-BSV07L114,Bugambilia San Vicente,60,130,no,bolsa 7 litros
-BUG12L200,Bugambilia,50,2847,si,bolsa 12 litros|bolsa 20 litros|bolsa 10 litros|bolsa 3 litros
-BUG07L128,Bugambilia Surtida,66,2759,si,bolsa 7 litros
-BUG08L001,Bugambilia Col,129,1628,si,bolsa 8 litros|bolsa 12 litros
-BUG15L128,Bugambilia Envarada Sur,3,801,si,bolsa 15 litros
-BUG50L128,Bugambilia Tronco,23,263,si,bolsa 50 litros|bolsa 60 litros
-CAC02L010,Cacahuatillo,120,6784,si,bolsa 2 litros
-CAC02L077,Cacao,49,454,si,bolsa 2 litros
-CAC45L152,Cacao-1800,2,0,no,bolsa 45 litros
-CAF08L124,Cafe,13,2,no,bolsa 8 litros|bolsa 3 litros
-CAL04L010,Caliandra,1,1239,si,bolsa 4 litros
-CAL08P109,Calathea,127,1907,si,maceta negra 8 pulgadas
-CAL30L105,Calistemo,2,212,si,bolsa 30 litros
-CAL60L103,Calistemo Llorón,1,17,no,bolsa 60 litros
-CAM40L170,Camelia,62,79,no,bolsa 40 litros
-CAN02L077,Canela,53,472,si,bolsa 2 litros|bolsa 6 litros
-CAN04L006,Cisus Antartica,20,174,no,bolsa 4 litros
-CAR03L077,Cariza Enana,3,2991,si,bolsa 3 litros|bolsa 2 litros
-CAR04L133,Cedro Arizona,20,20,no,bolsa 4 litros
-CBL03L169,Cedro Blanco,35,76,no,bolsa 3 litros
-CBR06L169,Cerezo Brasileño,19,29,no,bolsa 6 litros
-CBR08L129,Cerezo De Brasil,83,96,no,bolsa 8 litros|bolsa 60 litros
-CBR30L105,Cerezo Del Brasil,10,3,no,bolsa 30 litros
-CCG08P006,Croto Cola De Gallo,200,8432,si,maceta negra 8 pulgadas|bolsa 6 litros|bolsa 2 litros
-CCH03L006,Cisus Charly-Rombifolia,109,5664,si,bolsa 3 litros
-CCH10P006,Cisus Charly Colgante,34,1972,si,maceta negra 10 pulgadas
-CCH10P125,Cisus Charly,2,0,no,maceta negra 10 pulgadas
-CED01L125,Cedron,7,512,si,bolsa 1 litros
-CEI20L129,Ceiba,4,28,no,bolsa 20 litros|bolsa 12 litros|bolsa 4 litros
-CEL01L125,Celosia,1,1187,si,bolsa 1 litros
-CEN15L006,Clavo Enano,30,659,si,bolsa 15 litros|bolsa 3 litros|bolsa 6 litros|bolsa 10 litros
-CER12L077,Cerezo Lapins,13,47,no,bolsa 12 litros
-CEV08L013,Clavo Enano Variegado,44,27,no,bolsa 8 litros
-CFR04L112,Cariza De Fruta,163,17,no,bolsa 4 litros
-CGA03L003,Croto Gallo,76,1518,si,bolsa 3 litros
-CHI01L116,Chile,11,7,no,bolsa 1 litros
-CHI03L125,Chile Surtido,2,498,si,bolsa 3 litros
-CHI05P109,Corazon En Un Hilo,10,0,no,maceta negra 5 pulgadas
-CHI08L115,Chicozapote,9,28,no,bolsa 8 litros|bolsa 45 litros
-CIN04L010,Clavel De La India,22,370,si,bolsa 4 litros|bolsa 18 litros
-CIN06P121,Canto De La India,50,827,si,maceta negra 6 pulgadas|maceta negra 7 pulgadas
-CIT30L006,Cipres Italiano,10,421,si,bolsa 30 litros|bolsa 2 litros|bolsa 60 litros|bolsa 45 litros|bolsa 4 litros
-CJA02L127,Criptomeria Japonica,64,1482,si,bolsa 2 litros|bolsa 8 litros
-CLE04L133,Cipres Leyland,2,293,si,bolsa 4 litros
-CLI03L077,Cedro Limon,2,1202,si,bolsa 3 litros|bolsa 4 litros
-CLI04L006,Clivia,25,624,si,bolsa 4 litros|bolsa 20 litros
-CLO06P009,Clorofito,75,5535,si,maceta negra 6 pulgadas
-CMA02L010,Croto Manzano,50,71,no,bolsa 2 litros
-CMA06P109,Corazon De Maria,5,1828,si,maceta negra 6 pulgadas
-CMO06P006,Cuna De Moises,23,2768,si,maceta negra 6 pulgadas|maceta negra 8 pulgadas
-CNU06P109,Cascara De Nuez,2,1302,si,maceta negra 6 pulgadas
-COL03P126,Colorata,6,0,no,maceta negra 3 pulgadas
-COL06P109,Coleo,63,1527,si,maceta negra 6 pulgadas
-COL08P126,Colgantes,1,2,no,maceta negra 8 pulgadas
-CON10P009,Conchita,5,187,no,maceta negra 10 pulgadas|maceta negra 5 pulgadas
-COR01L125,Col De Ornato,16,297,si,bolsa 1 litros
-COR02L077,Corteza -,12,12,no,bolsa 2 litros
-COR04L006,Croto Orange,96,4,no,bolsa 4 litros
-COT02L010,Cotoneaster Verde,70,3578,si,bolsa 2 litros
-CPE03L006,Croto Petra,310,16232,si,bolsa 3 litros|bolsa 6 litros|bolsa 2 litros|maceta negra 7 pulgadas|maceta negra 6 pulgadas|bolsa 15 litros|bolsa 4 litros
-CPE04L006,Croto Petra Amarillo,93,2377,si,bolsa 4 litros
-CPG03L006,Croto Pluma De Gallo,191,102,no,bolsa 3 litros
-CRI01L127,Criptomeria,109,3012,si,bolsa 1 litros
-CRI03L009,Crinum Enano,26,24,no,bolsa 3 litros
-CRI06P121,Criptantus,18,6,no,maceta negra 6 pulgadas
-CRI15L006,Crinum,5,38,no,bolsa 15 litros|bolsa 20 litros
-CSA03L077,Cerezo Sakura Rellena R Bonsai,7,103,no,bolsa 3 litros
-CSE12P114,Cuna Sensacion,5,863,si,maceta negra 12 pulgadas|maceta negra 11 pulgadas
-CSN20L077,Cerezo Sakura Napoleon-,15,7,no,bolsa 20 litros
-CSN30L077,Cerezo Sakura Napoleon,15,16,no,bolsa 30 litros
-CTO03L003,Croto Tornillo,152,8207,si,bolsa 3 litros|bolsa 2 litros|bolsa 15 litros|maceta negra 6 pulgadas
-CTO10L010,Clavo Tobira,64,197,no,bolsa 10 litros
-CUA30L129,Cuatecomate,1,27,no,bolsa 30 litros
-CVE02L164,Clavo Verde,35,693,si,bolsa 2 litros|bolsa 3 litros
-CVE45L077,Ciruelo Verde,2,4,no,bolsa 45 litros
-DAY03L009,Dayanela,201,168,no,bolsa 3 litros
-DCO06P121,Dracena Compacta,68,1488,si,maceta negra 6 pulgadas|bolsa 20 litros|maceta negra 10 pulgadas
-DCU08L009,Duranta Cuba,164,7732,si,bolsa 8 litros|bolsa 4 litros|bolsa 45 litros|bolsa 60 litros
-DDI20L077,Durazno Nectarino,2,2,no,bolsa 20 litros
-DEB03P126,Debi,6,0,no,maceta negra 3 pulgadas
-DGO20L009,Duranta Gold,3,223,si,bolsa 20 litros
-DIC10P109,Dichondria,20,30,no,maceta negra 10 pulgadas
-DIN40L157,Dracena Indivisa España,2,97,no,bolsa 40 litros
-DIP06P200,Diplademia,75,605,si,maceta negra 6 pulgadas
-DMA20L001,Dracena Marginata,21,187,no,bolsa 20 litros|bolsa 10 litros|maceta negra 11 pulgadas|maceta negra 6 pulgadas
-DOL04L115,Dolar,30,80,no,bolsa 4 litros
-DRA45L006,Dracena Draco,2,48,no,bolsa 45 litros
-DRO04L200,Dracena Roja,150,2714,si,bolsa 4 litros|bolsa 6 litros
-DRO06P126,Dosty Rous,2,1,no,maceta negra 6 pulgadas
-DUR70L077,Durazno Oro Azteka,1,3,no,bolsa 70 litros
-DWA12P157,Dracena Warneki Lemon,6,51,no,maceta negra 12 pulgadas
-EAM06P006,Euphorbia Mini Roja,6,1206,si,maceta negra 6 pulgadas
-ERO08P006,Euphorbia Roja,55,668,si,maceta negra 8 pulgadas
-EBA60L145,Ebano,3,0,no,bolsa 60 litros
-EES02L105,Esparrago Espringueri,82,4314,si,bolsa 2 litros|maceta negra 10 pulgadas
-EES06P001,Esparrago Springueri,27,154,no,maceta negra 6 pulgadas
-ELE03L009,Eleagnus,53,1371,si,bolsa 3 litros
-ELI01L125,Elia,26,108,no,bolsa 1 litros
-EME06P006,Esparrago Meyeri,178,11868,si,maceta negra 6 pulgadas|bolsa 6 litros|bolsa 2 litros|bolsa 8 litros|bolsa 3 litros|maceta negra 11 pulgadas
-EPL06P006,Esparrago Plumoso,57,8321,si,maceta negra 6 pulgadas
-EPL18L010,Eleagnus Plateado,20,400,si,bolsa 18 litros
-ERI03L125,Erika,3,100,no,bolsa 3 litros|bolsa 45 litros
-ERO60L006,Encino Rojo,1,38,no,bolsa 60 litros|bolsa 80 litros
-ESA06P003,Euphorbia Salmon,20,1650,si,maceta negra 6 pulgadas
-ESP06P130,Espantamoscas,51,3894,si,maceta negra 6 pulgadas
-EST01L125,Estafiate,18,81,no,bolsa 1 litros
-ESV60L124,Encino Siempre Verde,1,3,no,bolsa 60 litros
-ETI01L003,Euphorbia Tirucalli,99,574,si,bolsa 1 litros|maceta negra 6 pulgadas|bolsa 8 litros
-EUC06P106,Eucharis,15,6,no,maceta negra 6 pulgadas
-EUF06P006,Euphorbia Mini,117,3032,si,maceta negra 6 pulgadas|maceta negra 5 pulgadas
-EUG30L170,Eugenia,5,5,no,bolsa 30 litros
-EUP06P011,Euphorbia,19,1,no,maceta negra 6 pulgadas|maceta negra 10 pulgadas
-EVO01L077,Evonimo,79,12184,si,bolsa 1 litros
-FBA07P168,Ficus Bambino,93,79,no,maceta negra 7 pulgadas
-FBE10L136,Ficus Benjamina,83,27,no,bolsa 10 litros|bolsa 6 litros|bolsa 20 litros
-FBE30L136,Ficus Benjamina -,5,2,no,bolsa 30 litros|bolsa 45 litros
-FCH10L129,Flama China,1,0,no,bolsa 10 litros
-FEI45L124,Feijoa,1,51,no,bolsa 45 litros|bolsa 80 litros
-FFO45L145,Fouquieria Formosa,2,0,no,bolsa 45 litros
-FHE45L077,Ficus Hector,1,45,no,bolsa 45 litros|bolsa 20 litros
-FLA30L006,Flama,28,22,no,bolsa 30 litros
-FMA65L140,Flor De Mayo,2,14,no,bolsa 65 litros|bolsa 10 litros|bolsa 75 litros
-FMA80L145,Flor De Mayo Fiusha,1,0,no,bolsa 80 litros
-FMO15L077,Ficus Moclame,1,51,no,bolsa 15 litros
-FOR04L077,Forneo Verde,38,82,no,bolsa 4 litros
-FPA04L077,Ficus Pandurata,7,581,si,bolsa 4 litros|bolsa 20 litros|bolsa 60 litros|maceta negra 8 pulgadas|bolsa 30 litros
-FPE06P006,Ficus Petiolaris,23,611,si,maceta negra 6 pulgadas|bolsa 10 litros
-FRE02L113,Fresno,49,30,no,bolsa 2 litros|bolsa 20 litros
-FRE06P125,Fresa,25,923,si,maceta negra 6 pulgadas
-FRO30L103,Falso Romero,8,265,si,bolsa 30 litros|bolsa 8 litros
-FSL10L153,Ficus Star Ligth,13,27,no,bolsa 10 litros
-FTR04L010,Ficus Triangularis -,37,174,no,bolsa 4 litros
-FTR10L010,Ficus Triangularis,16,151,no,bolsa 10 litros|bolsa 45 litros
-GAL10L006,Galathea,18,508,si,bolsa 10 litros
-GAR20L170,Gardenia,6,0,no,bolsa 20 litros
-GAS04P126,Gasteria,8,30,no,maceta negra 4 pulgadas|maceta negra 6 pulgadas|maceta negra 3 pulgadas
-GCA20L077,Guayabo Calvillo,2,10,no,bolsa 20 litros|bolsa 10 litros
-GCA12L010,Guayabo California,63,753,si,bolsa 12 litros
-GFI05P130,Golden Fish,59,72,no,maceta negra 5 pulgadas
-GFI06P200,Goldfish,5,30,no,maceta negra 6 pulgadas
-GJA04L010,Guayabo Japones Roja,20,266,si,bolsa 4 litros
-GJA18L010,Guayabo Japones Amarillo,14,166,no,bolsa 18 litros
-GUA45L105,Guayabo Japones,7,47,no,bolsa 45 litros|bolsa 20 litros|bolsa 60 litros
-GJA45L001,Guayabo Japones Ama-200,3,20,no,bolsa 45 litros
-GOS04P003,Garrita De Oso Varigado,68,121,no,maceta negra 4 pulgadas
-GPE10L010,Guayaba Peruana,20,0,no,bolsa 10 litros
-GPI30L006,Guayabo Piña,5,33,no,bolsa 30 litros
-GRA45L010,Granada,1,19,no,bolsa 45 litros
-GRE30L113,Grevilia,11,5,no,bolsa 30 litros|bolsa 65 litros
-GRO03L113,Guayacan Rosa,38,0,no,bolsa 3 litros
-GUA02P116,Guanabana,64,29,no,maceta negra 2 pulgadas|bolsa 30 litros
-GUA03L113,Guamuchil,58,0,no,bolsa 3 litros
-GUA03L129,Guaje,4,74,no,bolsa 3 litros
-GUA04L077,Guayabo Rosa,1,297,si,bolsa 4 litros
-GUA12L124,Guayabo,11,1,no,bolsa 12 litros
-GUA60L009,Guanabano,1,7,no,bolsa 60 litros
-HAM04L010,Hule Amarillo,39,126,no,bolsa 4 litros
-HAM12L116,Heliconia Amarilla,85,520,si,bolsa 12 litros
-HMO08L129,Huayacan Rosa,1,87,no,bolsa 8 litros|bolsa 45 litros|bolsa 80 litros
-HAR05P130,Helecho Arroz,57,246,si,maceta negra 5 pulgadas
-HAU11P077,Helecho Australiano,3,1681,si,maceta negra 11 pulgadas|maceta negra 14 pulgadas
-HAZ10P125,Hiedra Azul,17,997,si,maceta negra 10 pulgadas
-HBL08L006,Hule Blanco,4,162,no,bolsa 8 litros
-HBO10P001,Helecho Boston***Oferta***60,51,1053,si,maceta negra 10 pulgadas
-HBS03P106,Heleho Blue Star,11,171,no,maceta negra 3 pulgadas
-HBS05P077,Helecho Blue Star,19,2636,si,maceta negra 5 pulgadas|maceta negra 6 pulgadas
-HBU06P009,Hierba Buena,90,260,si,maceta negra 6 pulgadas
-HCA11P006,Hule Cavernet,106,927,si,maceta negra 11 pulgadas|maceta negra 10 pulgadas|bolsa 2 litros|maceta negra 12 pulgadas
-HCA06P106,Helecho Cuerno De Alce,26,2844,si,maceta negra 6 pulgadas|maceta negra 4 pulgadas|maceta negra 10 pulgadas
-HCA05P106,Helecho Cuerno De Alce Col,7,113,no,maceta negra 5 pulgadas
-HCA06P200,Hoya Carnosa,6,65,no,maceta negra 6 pulgadas
-HCB10L116,Heliconia Cola De Borrego,65,55,no,bolsa 10 litros
-HCC06P130,Helecho Cuerno De Ciervo,72,1925,si,maceta negra 6 pulgadas
-HCI06P106,Helecho Cilantrillo,22,5431,si,maceta negra 6 pulgadas
-HCV06P106,Helecho Cuero Varigado,6,102,no,maceta negra 6 pulgadas
-HDA06P106,Helecho Davalia,5,1210,si,maceta negra 6 pulgadas|maceta negra 10 pulgadas
-HEL20L009,Hoja Elegante,62,3964,si,bolsa 20 litros|bolsa 6 litros|bolsa 60 litros|bolsa 45 litros
-HEL60L120,Hoja Elegante-,6,11,no,bolsa 60 litros
-HEM03L105,Hemerocalis,44,610,si,bolsa 3 litros
-HEN03L077,Heliconia Enana,46,2294,si,bolsa 3 litros|bolsa 4 litros
-HGA01L125,Hiedra Galvia Española,27,3177,si,bolsa 1 litros
-HIN01L125,Hinojo,9,194,no,bolsa 1 litros
-HKE05P168,Hoya Kerry C/Tutor,51,438,si,maceta negra 5 pulgadas
-HKE06P126,Hoya Kerry,3,0,no,maceta negra 6 pulgadas
-HMA06L116,Heliconia Mariposa,8,13,no,bolsa 6 litros
-HMI06P077,Helecho Microsorum,48,13355,si,maceta negra 6 pulgadas|maceta negra 10 pulgadas
-HMO10P003,Hiedra Morada,32,489,si,maceta negra 10 pulgadas
-HNA01L127,Hinoki Nana,165,2312,si,bolsa 1 litros|bolsa 2 litros|bolsa 8 litros
-HNA06P106,Helecho Nido De Ave,7,2941,si,maceta negra 6 pulgadas|maceta negra 8 pulgadas
-HNE04L120,Hoja Elegante Negra,5,334,si,bolsa 4 litros
-HNO06P125,Huele De Noche,3,1678,si,maceta negra 6 pulgadas
-HOL01L125,Hierba De Olor,106,20586,si,bolsa 1 litros|maceta negra 5 pulgadas
-HOR08P003,Hortencia,96,4480,si,maceta negra 8 pulgadas|maceta negra 10 pulgadas
-HOS03P106,Helecho Osaka,18,66,no,maceta negra 3 pulgadas|maceta negra 8 pulgadas
-HPA10L153,Hamelia Patens,45,262,si,bolsa 10 litros
-HPE04L077,Helecho Peine,12,11907,si,bolsa 4 litros|bolsa 3 litros
-HPT08L116,Heliconia Pico De Tucan,32,2186,si,bolsa 8 litros
-HRU08P006,Hule Rubi,122,175,no,maceta negra 8 pulgadas
-HRU10P077,Helecho Rufles,6,7,no,maceta negra 10 pulgadas
-HSL06P106,Helecho Silver Lady,5,1240,si,maceta negra 6 pulgadas
-HSU10L125,Hiedra Sueca/Inglesa,26,1001,si,bolsa 10 litros
-HUI18L129,Huizache,2,24,no,bolsa 18 litros
-HUM01L101,Humiquick,15,72,no,bolsa 1 litros
-HUV18L010,Hule Cavernet Bonsai,1,4,no,bolsa 18 litros
-HYP06P109,Hypoeste,67,1735,si,maceta negra 6 pulgadas
-ICA03L006,Ixora Carla,196,18899,si,bolsa 3 litros
-IEN03L006,Ixora Enana Surtida-.30,203,11379,si,bolsa 3 litros
-INS01L125,Insulina,1,169,no,bolsa 1 litros
-IRE08L006,Ixora Reyna,79,4000,si,bolsa 8 litros
-IRI06P125,Iris,49,791,si,maceta negra 6 pulgadas
-JAB20L105,Jaboticabo,7,75,no,bolsa 20 litros|bolsa 18 litros|bolsa 50 litros|bolsa 10 litros|bolsa 40 litros
-JAC04L077,Jacaranda,1,289,si,bolsa 4 litros|bolsa 2 litros|bolsa 65 litros|bolsa 45 litros|bolsa 60 litros|bolsa 80 litros
-JAC60L170,Jacaranda Bca,12,44,no,bolsa 60 litros|bolsa 10 litros
-JAD15L130,Jade,13,60,no,bolsa 15 litros
-JAR10L009,Jazmin De Arabia,63,384,si,bolsa 10 litros
-JAR30L125,Jarilla,1,0,no,bolsa 30 litros
-JAZ20L006,Junipero Azul,4,1060,si,bolsa 20 litros
-JES04L133,Junipero Sparta,20,0,no,bolsa 4 litros
-JES08L010,Junipero Estrella,19,1052,si,bolsa 8 litros
-JGM10L127,Junipero Green Mountain,16,386,si,bolsa 10 litros
-JGM12P117,Junipero Green Montain,9,18,no,maceta negra 12 pulgadas
-JHE02L164,Jazmin Hembra,79,375,si,bolsa 2 litros
-JPN03L010,Junipero Procumbis Nana,1,2361,si,bolsa 3 litros|bolsa 4 litros|maceta negra 10 pulgadas
-JPN08L010,Junipero Procumbees Nana,1,1291,si,bolsa 8 litros
-JSJ03L010,Junipero San Jose,106,1160,si,bolsa 3 litros|bolsa 8 litros
-JTA20L006,Junipero Tapizante,40,1428,si,bolsa 20 litros|bolsa 4 litros|bolsa 45 litros
-LAF06P170,Lechero Africano,33,62,no,maceta negra 6 pulgadas
-LAM10L136,Laurel Amarillo,30,0,no,bolsa 10 litros
-LAN02L077,Lantana,24,35621,si,bolsa 2 litros
-LAV01L125,Lavanda,11,7080,si,bolsa 1 litros
-LAV03L125,Lavanda -,49,101,no,bolsa 3 litros
-LBE04L105,Luz De Bengala,46,4619,si,bolsa 4 litros
-LCH12L120,Lima Chichi,10,374,si,bolsa 12 litros
-LCO10L120,Limon Colimeño,9,1236,si,bolsa 10 litros|bolsa 20 litros
-LEU03L009,Leucophilum,33,5057,si,bolsa 3 litros
-LEU10L120,Limon Eureka,14,333,si,bolsa 10 litros
-LIC45L152,Lichi,2,6,no,bolsa 45 litros
-LIM10L013,Lima,38,5,no,bolsa 10 litros
-LIQ03L006,Liquidambar,4,179,no,bolsa 3 litros
-LNI01L125,Lagrima De Niño,32,1101,si,bolsa 1 litros
-LOR08P006,Loropetalo-,86,6859,si,maceta negra 8 pulgadas
-LOR15L116,Lluvia De Oro,1,191,no,bolsa 15 litros|bolsa 18 litros|bolsa 40 litros
-LOV03P126,Lovery Rose,5,4,no,maceta negra 3 pulgadas
-LPE06L001,Limon Persa,18,1682,si,bolsa 6 litros|bolsa 3 litros|bolsa 10 litros|bolsa 8 litros|bolsa 20 litros|bolsa 30 litros|bolsa 60 litros
-LPE08L009,Lirio Persa Bco,79,508,si,bolsa 8 litros
-LPE12L130,Limon Persa Inj.,1,10,no,bolsa 12 litros
-LRE12L120,Limon Real,24,542,si,bolsa 12 litros
-LRO10P134,Lirio Rojo,2,7,no,maceta negra 10 pulgadas
-LVE12L136,Laurel Verde,55,6,no,bolsa 12 litros|bolsa 30 litros
-MAG03L010,Magnolia,49,1439,si,bolsa 3 litros|bolsa 20 litros|bolsa 60 litros|bolsa 80 litros
-MAG10L010,Magnolia Grandiflora,40,187,no,bolsa 10 litros|bolsa 30 litros
-MAG20L003,Magnolia Lady Jane,20,237,si,bolsa 20 litros|bolsa 60 litros
-MAJ04L010,Majagua Varigado,53,493,si,bolsa 4 litros
-MAJ04L136,Majahua,76,39,no,bolsa 4 litros|bolsa 15 litros
-MAJ06L153,Majagua,20,604,si,bolsa 6 litros|bolsa 45 litros
-MAM08L115,Mamey,15,38,no,bolsa 8 litros|bolsa 45 litros
-MAN04L001,Mandevilia Amarilla,106,4402,si,bolsa 4 litros
-MAN45L152,Mango,7,35,no,bolsa 45 litros|bolsa 6 litros
-MAN10L120,Mango Heydi -Tomy-Kent,45,1959,si,bolsa 10 litros
-MAU30L170,Maple Australiano,1,0,no,bolsa 30 litros
-MCA10L120,Mandarina Calamondi,5,544,si,bolsa 10 litros|bolsa 20 litros
-MCJ03L077,Manzana California,48,360,si,bolsa 3 litros
-MCO10L120,Mandarina Concua,8,642,si,bolsa 10 litros|bolsa 45 litros
-MEM45L200,Membrillo,1,0,no,bolsa 45 litros
-MEN04P009,Menta,59,665,si,maceta negra 4 pulgadas
-MEZ02L113,Mezquite Mexicano,74,70,no,bolsa 2 litros
-MEZ10L006,Mezquite,24,194,no,bolsa 10 litros
-MGO04L077,Manzana Golden,10,312,si,bolsa 4 litros
-MIR03L119,Mirto,37,3525,si,bolsa 3 litros|bolsa 1 litros
-MJA60L170,Maple Japones,1,10,no,bolsa 60 litros
-MON01L006,Moneda,50,6494,si,bolsa 1 litros
-MON05P130,Monalisa,134,390,si,maceta negra 5 pulgadas
-MPI10L120,Mandarina Piñatera,6,906,si,bolsa 10 litros|bolsa 45 litros|bolsa 60 litros
-MRE10L120,Mandarina Reyna,5,489,si,bolsa 10 litros
-MRO03L077,Manzana Red Delicius,80,899,si,bolsa 3 litros
-MST10L120,Mandarina Sangre De Toro,36,4,no,bolsa 10 litros
-MTA10L120,Mandarina Tanjerina,4,322,si,bolsa 10 litros
-MTA60L077,Mandarina Tangerina,1,2,no,bolsa 60 litros
-MUI01L125,Muicle,16,565,si,bolsa 1 litros
-MVE04L077,Manzana Verde,19,40,no,bolsa 4 litros
-NAN03L116,Nanche,8,154,no,bolsa 3 litros
-NAN04L115,Nache,30,0,no,bolsa 4 litros
-NAN15L006,Nandina,74,697,si,bolsa 15 litros
-NBR04P126,Neon Break,8,5,no,maceta negra 4 pulgadas|maceta negra 6 pulgadas
-NBU07P159,Noche Buena,1,176,no,maceta negra 7 pulgadas
-NCA20L013,Naranja Calamondi,5,20,no,bolsa 20 litros
-NCP08L077,Nogal Cascara De Papel,28,132,no,bolsa 8 litros
-NCP45L152,Nuez Cascara De Papel,1,0,no,bolsa 45 litros
-NEE10L115,Neem,15,20,no,bolsa 10 litros
-NEN10P134,Nenunfares,1,11,no,maceta negra 10 pulgadas
-NIS60L105,Nispero,2,41,no,bolsa 60 litros
-NMI10L120,Naranja Miniola,13,87,no,bolsa 10 litros
-NMO01L125,No Me Olvides,10,693,si,bolsa 1 litros
-NPA04L006,Nevando En Paris Bco,103,100,no,bolsa 4 litros
-NUT01L154,Nutrimento Para Orq.,2,11,no,bolsa 1 litros
-NWA10L013,Naranja Washintonia Red,11,24,no,bolsa 10 litros
-OAR03L113,Orquidea De Arbol,144,182,no,bolsa 3 litros|bolsa 20 litros
-OAR65L140,Orquide De Arbol,1,5,no,bolsa 65 litros
-OFR20L108,Olivo De Fruta,39,41,no,bolsa 20 litros|bolsa 4 litros|bolsa 45 litros|bolsa 10 litros
-ONE60L006,Olivo Negro,1,11,no,bolsa 60 litros
-OPH06P003,Orquidea Phalenopsis,20,648,si,maceta negra 6 pulgadas
-OPU06L124,Opuntia,56,159,no,bolsa 6 litros
-ORE01L125,Oregano,5,1079,si,bolsa 1 litros
-ORG11P110,Organo Conjunto,6,3,no,maceta negra 11 pulgadas
-OVI02L010,Oro Viejo,79,344,si,bolsa 2 litros
-PAB10L009,Palma Abanico,39,78,no,bolsa 10 litros
-PAC08P001,Pachypodium,29,32,no,maceta negra 8 pulgadas|bolsa 30 litros|maceta negra 14 pulgadas
-PAC45L153,Pachyra,5,5,no,bolsa 45 litros
-PAK06P010,Pakistaqui,105,5971,si,maceta negra 6 pulgadas
-PAM60L006,Pampagras,6,114,no,bolsa 60 litros
-PAN30L011,Pandanus,11,55,no,bolsa 30 litros|maceta negra 11 pulgadas
-PAP01L116,Papaya,12,19,no,bolsa 1 litros
-PAP30L105,Papaya Maradol,37,116,no,bolsa 30 litros
-PAQ06P006,Paquistaqui,82,4822,si,maceta negra 6 pulgadas|bolsa 8 litros
-PAR06L200,Palma Areka,50,449,si,bolsa 6 litros|bolsa 10 litros|bolsa 60 litros
-PAR50L129,Parota,1,5,no,bolsa 50 litros
-PAZ03L006,Plumbago Bco Y Azul,147,5420,si,bolsa 3 litros
-PAZ03L009,Plumbago Azul,3,1458,si,bolsa 3 litros
-PAZ20L009,Plumbago Azul/Bco,25,1014,si,bolsa 20 litros
-PBA10L006,Palma Bambu,2,159,no,bolsa 10 litros
-PBI30L077,Palma Bismarquia,4,51,no,bolsa 30 litros
-PBL06L006,Plumbago Bco,20,46,no,bolsa 6 litros
-PBL12L010,Palo Blanco,50,0,no,bolsa 12 litros
-PBR07P077,Palo De Brasil,5,345,si,maceta negra 7 pulgadas|maceta negra 6 pulgadas|maceta negra 5 pulgadas|maceta negra 8 pulgadas|bolsa 4 litros|bolsa 20 litros|bolsa 1 litros|bolsa 6 litros|bolsa 8 litros
-PBR09P144,Palo De Brasil Grueso,18,1,no,maceta negra 9 pulgadas
-PBR10L145,Pedilantus Bracteata,31,59,no,bolsa 10 litros
-PCA06P006,Palma Camedor,155,3164,si,maceta negra 6 pulgadas|bolsa 6 litros|bolsa 20 litros|maceta negra 5 pulgadas
-PCA06P001,Pasto Canguro,39,1569,si,maceta negra 6 pulgadas
-PCI20L006,Palma Cica Dion Spinolosum,7,4,no,bolsa 20 litros
-PCO01L125,Pasto Coreano,13,781,si,bolsa 1 litros
-PCO06P001,Philodendro Congo,1,105,no,maceta negra 6 pulgadas
-PCO08L011,Palma Coco Comun,4,2220,si,bolsa 8 litros
-PCO11P001,Philodendro Congo/Verde,49,499,si,maceta negra 11 pulgadas
-PCP20L009,Palma Coco Plumoso,6,195,no,bolsa 20 litros|bolsa 60 litros|bolsa 8 litros
-PCR04L116,Palma Crepe,20,74,no,bolsa 4 litros
-PCZ18L010,Palma Cola De Zorro,32,6,no,bolsa 18 litros
-PDA04L151,Palma Datilera,8,12,no,bolsa 4 litros|bolsa 15 litros|bolsa 45 litros
-PDO20L009,Platano Dominico,1,32,no,bolsa 20 litros
-PDU08L129,Palo Dulce,12,82,no,bolsa 8 litros
-PED04L011,Pedilantus,98,3797,si,bolsa 4 litros
-PEL10P109,Peluca,10,798,si,maceta negra 10 pulgadas
-PEN01L125,Pensamiento,7,337,si,bolsa 1 litros
-PEP04P126,Peperonia,11,10,no,maceta negra 4 pulgadas
-PEP05P009,Peperonia Varigada,67,53,no,maceta negra 5 pulgadas|maceta negra 6 pulgadas
-PEP06P109,Peperonia Vde/Varig.,51,5042,si,maceta negra 6 pulgadas
-PER10L153,Peregrina,20,231,si,bolsa 10 litros
-PES08L077,Palma Estrella,2,298,si,bolsa 8 litros
-PFI01L125,Pasto Fistuca,89,3947,si,bolsa 1 litros
-PFR10L077,Piñon De Fruta,2,132,no,bolsa 10 litros
-PGO80L129,Pimienta Gorda,1,0,no,bolsa 80 litros
-PHI05P011,Philodendro,61,39,no,maceta negra 5 pulgadas
-PHO06L120,Philodendro Hope,38,307,si,bolsa 6 litros
-PHO10L006,Photinea,66,270,si,bolsa 10 litros
-PHO20L120,Phiolodendro Hope,6,708,si,bolsa 20 litros
-PIM06P106,Philodendro Imperial Rojo,19,264,si,maceta negra 6 pulgadas
-PIN12L006,Piñanona,63,3483,si,bolsa 12 litros|bolsa 15 litros|bolsa 6 litros|bolsa 2 litros|bolsa 4 litros|bolsa 30 litros|bolsa 10 litros|bolsa 20 litros
-PIN07P001,Piñanona Mini,30,86,no,maceta negra 7 pulgadas
-PIN10L009,Piña,28,885,si,bolsa 10 litros
-PIN20L120,Piñanona700,3,7,no,bolsa 20 litros
-PIN45L009,Piña Ornamental,2,7,no,bolsa 45 litros
-PKE20L009,Palma Kerpiz,36,25,no,bolsa 20 litros|bolsa 8 litros|bolsa 45 litros
-PKE45L077,Palma Kerpiz 2X,2,79,no,bolsa 45 litros
-PLA03L151,Platanillo,44,5152,si,bolsa 3 litros
-PLI04L200,Palma Licuala,30,30,no,bolsa 4 litros
-PLR02L105,Pasto Liriope Rayado,67,8788,si,bolsa 2 litros|bolsa 7 litros|bolsa 6 litros
-PLT15P009,Papiro Litlle Tut,1,45,no,maceta negra 15 pulgadas
-PLU04L009,Plumifero,21,102,no,bolsa 4 litros
-PLU08L009,Plumero,4,1580,si,bolsa 8 litros
-PLU10L006,Plumeria,1,82,no,bolsa 10 litros
-PLV02L105,Pasto Liriope Verde,55,2687,si,bolsa 2 litros|bolsa 8 litros|bolsa 6 litros
-PMA03L077,Pera Mantequilla,39,648,si,bolsa 3 litros
-PMA06L009,Platano Macho,59,44,no,bolsa 6 litros
-PMO01L105,Pasto Monki,30,18830,si,bolsa 1 litros
-POD80L006,Podocarpus,3,223,si,bolsa 80 litros|bolsa 20 litros
-PVE30L006,Podocarpus Verde,1,66,no,bolsa 30 litros|bolsa 45 litros
-POL06L115,Polyalthia,1,1,no,bolsa 6 litros|bolsa 15 litros
-PON05P134,Pontederia,6,196,no,maceta negra 5 pulgadas
-POR03P126,Porpusurum,6,0,no,maceta negra 3 pulgadas
-POX06P134,Pasto Oxigenado,3,49,no,maceta negra 6 pulgadas
-PPR02L200,Pasto Penicetum Rojo,50,1723,si,bolsa 2 litros
-PPT03P126,Pink Ptrumper,11,20,no,maceta negra 3 pulgadas
-PPV02L200,Pasto Penicetum Verde,30,11042,si,bolsa 2 litros
-PRA10L011,Palma Rafiz,14,852,si,bolsa 10 litros|maceta negra 10 pulgadas
-PRE07P109,Philodendro Red,8,421,si,maceta negra 7 pulgadas
-PRE20L117,Palma Real,10,4,no,bolsa 20 litros
-PRI80L140,Primavera Rosa,1,51,no,bolsa 80 litros
-PRO30L105,Palma Robelina,8,518,si,bolsa 30 litros|bolsa 5 litros|bolsa 3 litros|bolsa 45 litros|bolsa 10 litros|bolsa 15 litros
-PRO30L129,Papelillo Rojo,3,1,no,bolsa 30 litros|bolsa 45 litros
-PRO45L105,Palma Robelina 2X-,1,4,no,bolsa 45 litros
-PSE08L001,Philodendro Sellum,59,14042,si,bolsa 8 litros|bolsa 10 litros|bolsa 15 litros|bolsa 20 litros|bolsa 6 litros|maceta negra 6 pulgadas|bolsa 12 litros|maceta negra 10 pulgadas
-PSI07P109,Philodendro Silvia,15,25,no,maceta negra 7 pulgadas
-PTW02L009,Pasto Twister,80,219,si,bolsa 2 litros
-PVE08P109,Philodendro Verde,9,274,si,maceta negra 8 pulgadas|maceta negra 3 pulgadas
-PVE20L145,Pedilantus Verde,9,1,no,bolsa 20 litros
-PVI06P001,Philodendro Virkin,9,658,si,maceta negra 6 pulgadas
-PVI08P001,Philodendro Virking,14,70,no,maceta negra 8 pulgadas
-PVI60L120,Palma Del Viajero,3,107,no,bolsa 60 litros
-PWA60L105,Palma Washingtonia,2,18,no,bolsa 60 litros
-PXA08L006,Philodendro Xanadu,58,19889,si,bolsa 8 litros|bolsa 30 litros|bolsa 15 litros|maceta negra 10 pulgadas|bolsa 20 litros|bolsa 45 litros
-PZA07P003,Palma Zamioculca,23,139,no,maceta negra 7 pulgadas|maceta negra 8 pulgadas
-PZA08P120,Palma Zamia Furfuracea,2,0,no,maceta negra 8 pulgadas
-PZA20L105,Palma Zamia,2,11,no,bolsa 20 litros|bolsa 60 litros
-QUI20L006,Quisqualis,9,62,no,bolsa 20 litros
-RCO02L167,Rosa Coster,207,1258,si,bolsa 2 litros|bolsa 6 litros
-RCO05P003,Rosario Colgante,41,16,no,maceta negra 5 pulgadas
-RDO40L145,Rosa Dorada,1,10,no,bolsa 40 litros
-REA01L149,Rea Tricolor,60,440,si,bolsa 1 litros
-RIN01L011,Rinonina,83,19070,si,bolsa 1 litros
-RIN01L077,Riñonina,119,2117,si,bolsa 1 litros
-RNU08L169,Romero De Nuez,44,406,si,bolsa 8 litros|bolsa 2 litros
-ROC01L125,Rocio,67,6329,si,bolsa 1 litros
-ROM02L119,Romero,20,9717,si,bolsa 2 litros|bolsa 10 litros|bolsa 8 litros|bolsa 3 litros
-ROS03L167,Rosal,9,343,si,bolsa 3 litros|bolsa 2 litros
-RRA08L120,Romero Rastrero,55,5,no,bolsa 8 litros
-SAB11P170,Sabila Reyna,19,590,si,maceta negra 11 pulgadas
-SAL02L119,Salvia Leucanta,19,10320,si,bolsa 2 litros
-SAN03L009,Sanciviera Ama,16,2232,si,bolsa 3 litros
-SAN03L105,Sanciviera,72,4957,si,bolsa 3 litros|bolsa 4 litros|maceta negra 6 pulgadas
-SAN04L009,Sanciviera Verde,24,2273,si,bolsa 4 litros
-SAN05P003,Sanciviera Hanny,23,21,no,maceta negra 5 pulgadas
-SAP06P009,Sapito,30,434,si,maceta negra 6 pulgadas
-SCO01L125,Salvia Comestible,5,670,si,bolsa 1 litros|bolsa 2 litros
-SED06P003,Sedum  Reflexon,57,2017,si,maceta negra 6 pulgadas
-SEN10L009,Senna Alata,39,1065,si,bolsa 10 litros
-SIC02L113,Sicomoro,65,22,no,bolsa 2 litros
-SIN05P009,Singonio Galaxi Panda,23,20,no,maceta negra 5 pulgadas
-SLI45L105,Sangre Libaneza,4,4,no,bolsa 45 litros
-SLL15L077,Sauce Lloron,4,237,si,bolsa 15 litros|bolsa 4 litros
-SNI45L009,Stirilitzia Nicolae,18,83,no,bolsa 45 litros|bolsa 30 litros
-SOC04P126,Socialis,12,9,no,maceta negra 4 pulgadas
-SPI06P006,Singonio Pixi,21,3739,si,maceta negra 6 pulgadas|maceta negra 8 pulgadas|bolsa 2 litros
-SPI03L153,Spirea Bca/Rosa,24,71,no,bolsa 3 litros
-SPI10L153,Spirea Bca,18,481,si,bolsa 10 litros
-SPI11P001,Singonio Rosa,1,87,no,maceta negra 11 pulgadas
-SUC04P126,Suculentas,85,179,no,maceta negra 4 pulgadas|maceta negra 1 pulgadas|maceta negra 2 pulgadas|maceta negra 6 pulgadas
-SUC03P126,Suculenta,223,588,si,maceta negra 3 pulgadas|maceta negra 6 pulgadas|maceta negra 8 pulgadas
-SVA06P009,Singonio Varigado,3,0,no,maceta negra 6 pulgadas
-SVI01L125,Siempre Viva,24,330,si,bolsa 1 litros
-TAB04L129,Tabachin Silvestre,119,2854,si,bolsa 4 litros
-TAB60L003,Tabachin,3,79,no,bolsa 60 litros|bolsa 7 litros|bolsa 20 litros|bolsa 30 litros|bolsa 80 litros
-TAF03L077,Tulipan Africano,13,178,no,bolsa 3 litros|bolsa 12 litros|bolsa 40 litros|bolsa 45 litros
-TAM04L010,Tamarindo,27,33,no,bolsa 4 litros
-TAM30L125,Tamarix,8,0,no,bolsa 30 litros
-TAR08L077,Trueno De Arbol,35,141,no,bolsa 8 litros
-TBI10P003,Tradescantia Mini,28,382,si,maceta negra 10 pulgadas
-TEC12L001,Tecoma,30,34,no,bolsa 12 litros
-TEC20L009,Tecoma *Tronadora,5,221,si,bolsa 20 litros
-TEC20L129,Tecoma Stans,7,1276,si,bolsa 20 litros|bolsa 60 litros
-TEJ04L077,Tejocote,12,124,no,bolsa 4 litros
-TEL10P006,Telefono,61,1868,si,maceta negra 10 pulgadas|maceta negra 6 pulgadas
-THE80L145,Thevetia,4,0,no,bolsa 80 litros
-THI60L145,Tabebuia Hippie-1650 (Guayacan,2,1,no,bolsa 60 litros
-TLI07L128,Te Limon,3,167,no,bolsa 7 litros
-TOR01L125,Toronjil,20,1412,si,bolsa 1 litros
-TOR10L013,Toronja Sangria,19,1,no,bolsa 10 litros
-TPA10P006,Telefono Panda,24,335,si,maceta negra 10 pulgadas
-TRA10P109,Tradescantia,28,487,si,maceta negra 10 pulgadas|maceta negra 6 pulgadas
-TRA10P003,Tradescantia Zebrina,46,2158,si,maceta negra 10 pulgadas
-TTE03L112,Trueno Texano,23,121,no,bolsa 3 litros
-TTR10P003,Tradescantia Tricolor,33,319,si,maceta negra 10 pulgadas
-TUL04L010,Tulipan Arcoiris,53,1569,si,bolsa 4 litros
-TUL04L164,Tulipan,180,2248,si,bolsa 4 litros
-TUL10P134,Tule,1,1,no,maceta negra 10 pulgadas
-TUL20L132,Tulia,11,3,no,bolsa 20 litros
-TUL30L013,Tulia Dorada,22,9,no,bolsa 30 litros
-TUL60L170,Tulipan De La India Ama,9,14,no,bolsa 60 litros
-USE06P127,Uña De Señorita,52,2928,si,maceta negra 6 pulgadas
-UVA08L077,Uva De Mar,5,2195,si,bolsa 8 litros
-VAC15L153,Vitex Agnus Castus -,15,26,no,bolsa 15 litros
-VAF04P003,Violeta Africana,13,3024,si,maceta negra 4 pulgadas
-VAL10L153,Valeriana,33,188,no,bolsa 10 litros|bolsa 15 litros
-VER01L124,Veronica Morada,18,333,si,bolsa 1 litros
-VER01L125,Verbena,8,98,no,bolsa 1 litros
-VIN06P109,Vinca,50,1177,si,maceta negra 6 pulgadas|bolsa 1 litros
-VIT02L009,Vitex,60,537,si,bolsa 2 litros|bolsa 20 litros|bolsa 10 litros
-VIT02L010,Vitex Bonsai,1,2354,si,bolsa 2 litros
-VIT10L010,Vitex Verde,31,2486,si,bolsa 10 litros
-VLU20L006,Viburnio Lucidum,1,631,si,bolsa 20 litros|bolsa 3 litros
-VLU15L010,Viburnio Lucido,30,66,no,bolsa 15 litros
-VRE03P126,Vampire Red,9,23,no,maceta negra 3 pulgadas
-VSU03L105,Viburnio Suspensus,48,1093,si,bolsa 3 litros|bolsa 30 litros
-WIS12P130,Wisteria,4,36,no,maceta negra 12 pulgadas
-YUC15L170,Yuca,5,1,no,bolsa 15 litros
-ZAM45L152,Zapote Amarillo,1,1,no,bolsa 45 litros
-ZAP04L115,Zapote Negro,10,0,no,bolsa 4 litros
-ZAR05L130,Zarzamora,44,2868,si,bolsa 5 litros
+SKU,nombre_limpio,Existencia,Ventas,Popular,variaciones,,,,,,,,
+AAM08L124,Acacia Amarilla,15,4,no,bolsa 8 litros,,,,,,,,
+AAM45L009,Acacia Bicapsularis,2,14,no,bolsa 45 litros|bolsa 20 litros,,,,,,,,
+AAR11P145,Aloe Arborecente Cosmos,6,2,no,maceta negra 11 pulgadas,,,,,,,,
+AAT06L003,Aralea Arboricola Trinet,28,1400,si,bolsa 6 litros,,,,,,,,
+AAV03L003,Aralea Arboricola Verde,150,2747,si,bolsa 3 litros|bolsa 6 litros,,,,,,,,
+AAZ20L009,Agave Azul,25,180,no,bolsa 20 litros|bolsa 3 litros,,,,,,,,
+ABB04L077,Arandano Blue Berry,5,1087,si,bolsa 4 litros,,,,,,,,
+ACA01L124,Acanto,143,471,si,bolsa 1 litros|bolsa 4 litros,,,,,,,,
+ACA10L145,Aloe Camperi,10,0,no,bolsa 10 litros|maceta negra 11 pulgadas,,,,,,,,
+ACH10P145,Aloe Chabaudii,9,0,no,maceta negra 10 pulgadas,,,,,,,,
+ACI20L009,Agave Cimarron,24,15,no,bolsa 20 litros,,,,,,,,
+ACO04L145,Aloe Cobre,52,0,no,bolsa 4 litros,,,,,,,,
+ALO10L009,Alocasia Cuculata,30,248,si,bolsa 10 litros|maceta negra 15 pulgadas,,,,,,,,
+ADE03L001,Adelfa Enana Fiusha,156,107,no,bolsa 3 litros,,,,,,,,
+ADE03L009,Adelfa,89,17180,si,bolsa 3 litros|bolsa 10 litros,,,,,,,,
+ADE08L001,Adenium,69,4302,si,bolsa 8 litros|maceta negra 6 pulgadas|maceta negra 8 pulgadas|maceta negra 12 pulgadas,,,,,,,,
+ADI04P121,Arbol Del Dinero,30,371,si,maceta negra 4 pulgadas|bolsa 10 litros,,,,,,,,
+ADI11P145,Aloe Dieri,9,0,no,maceta negra 11 pulgadas,,,,,,,,
+AEL08L006,Aralea Elegantisima,30,2258,si,bolsa 8 litros|bolsa 20 litros|bolsa 60 litros|bolsa 3 litros,,,,,,,,
+AEN02L010,Agapando,106,10084,si,bolsa 2 litros|bolsa 4 litros,,,,,,,,
+AFF03P126,Affini,6,0,no,maceta negra 3 pulgadas,,,,,,,,
+AFR30L105,Arrayan De Fruta,9,33,no,bolsa 30 litros|bolsa 6 litros,,,,,,,,
+AGA01L125,Agazania,27,5023,si,bolsa 1 litros,,,,,,,,
+AGA50L157,Agave Americano,6,334,si,bolsa 50 litros,,,,,,,,
+AGI10P145,Agave Gipsofilam,2,0,no,maceta negra 10 pulgadas,,,,,,,,
+AGL06P168,Aglonema,111,154,no,maceta negra 6 pulgadas|bolsa 10 litros,,,,,,,,
+AHA06L115,Aguacate Hass,21,314,si,bolsa 6 litros|bolsa 35 litros,,,,,,,,
+AHI04L077,Amohena,3,581,si,bolsa 4 litros|bolsa 6 litros,,,,,,,,
+AHU04L129,Ahuehuete,50,61,no,bolsa 4 litros,,,,,,,,
+AJE01L125,Ajenjo,3,612,si,bolsa 1 litros,,,,,,,,
+ALC10L009,Alcatraz,30,460,si,bolsa 10 litros|maceta negra 8 pulgadas,,,,,,,,
+ALM04L115,Almendro,50,40,no,bolsa 4 litros,,,,,,,,
+ALO20L116,Acacia Lluvia De Oro,6,25,no,bolsa 20 litros|bolsa 65 litros,,,,,,,,
+AMA04L009,Amaryllis,2,75,no,bolsa 4 litros,,,,,,,,
+AMA06P134,Amazonica,5,211,si,maceta negra 6 pulgadas,,,,,,,,
+AMA08L124,Acacia Mariposa,15,3,no,bolsa 8 litros,,,,,,,,
+AMA06L129,Amate,3,2,no,bolsa 6 litros,,,,,,,,
+AMI06L003,Aralea Mini Gold,43,902,si,bolsa 6 litros|maceta negra 6 pulgadas,,,,,,,,
+ANT07P200,Anthurio,35,131,no,maceta negra 7 pulgadas,,,,,,,,
+ANT08P006,Anthurio Oaxaqueño,35,238,si,maceta negra 8 pulgadas|maceta negra 10 pulgadas,,,,,,,,
+APA08L006,Ave De Paraiso,78,3681,si,bolsa 8 litros|bolsa 4 litros|bolsa 45 litros|maceta negra 11 pulgadas,,,,,,,,
+APA60L120,Ave De Paraiso Gigante,2,2,no,bolsa 60 litros,,,,,,,,
+API04P126,Aloe Pink,4,20,no,maceta negra 4 pulgadas,,,,,,,,
+APL02L200,Arbusto De Playa,50,905,si,bolsa 2 litros,,,,,,,,
+APU15L145,Agave Pulpo,7,10,no,bolsa 15 litros|bolsa 4 litros,,,,,,,,
+ARE07P125,Aretillo,4,330,si,maceta negra 7 pulgadas|maceta negra 10 pulgadas,,,,,,,,
+ARU30L170,Acer Rubrum,2,4,no,bolsa 30 litros,,,,,,,,
+ASH20L169,Aralea Schefflera,20,28,no,bolsa 20 litros|bolsa 60 litros|bolsa 6 litros,,,,,,,,
+ASI11P001,Aralea Siboldi,10,122,no,maceta negra 11 pulgadas|bolsa 4 litros|bolsa 10 litros,,,,,,,,
+ASI80L161,Acer Silver,4,0,no,bolsa 80 litros,,,,,,,,
+ASP06P130,Aspidistra,53,1410,si,maceta negra 6 pulgadas,,,,,,,,
+AST03L124,Aster,150,42,no,bolsa 3 litros,,,,,,,,
+AST08L119,Astronomica,29,986,si,bolsa 8 litros|bolsa 30 litros|bolsa 4 litros|bolsa 60 litros|bolsa 11 litros,,,,,,,,
+AST06L145,Aloe Striata,7,1,no,bolsa 6 litros,,,,,,,,
+ATO08P162,Agave Tobala,7,1,no,maceta negra 8 pulgadas,,,,,,,,
+AVE04L006,Avelia Verde,50,5904,si,bolsa 4 litros|bolsa 3 litros,,,,,,,,
+AVO06L145,Agave Voley,20,11,no,bolsa 6 litros,,,,,,,,
+AVR10P107,Agave Victoria Regina,8,604,si,maceta negra 10 pulgadas,,,,,,,,
+AZA30L115,Azalea De Copa,6,66,no,bolsa 30 litros|bolsa 8 litros,,,,,,,,
+AZA10L115,Azalea Arbusto,61,67,no,bolsa 10 litros,,,,,,,,
+AZA40L158,Azalea Topiario,4,1,no,bolsa 40 litros|bolsa 70 litros|bolsa 50 litros,,,,,,,,
+BAR01L154,Barol Ins. Org,4,7,no,bolsa 1 litros,,,,,,,,
+BAR01L200,Buxus Arrayan,200,6057,si,bolsa 1 litros,,,,,,,,
+BAR06L170,Buxus Arrayan Bola,78,287,si,bolsa 6 litros,,,,,,,,
+BBI04P126,Blue Bier,12,5,no,maceta negra 4 pulgadas|maceta negra 6 pulgadas,,,,,,,,
+BCU07L114,Bugambilia Cuautla,60,376,si,bolsa 7 litros,,,,,,,,
+BEA15L117,Beaucarnea,17,48,no,bolsa 15 litros|bolsa 30 litros|maceta negra 14 pulgadas|bolsa 10 litros|maceta negra 3 pulgadas,,,,,,,,
+BEL06P006,Belen,4,4462,si,maceta negra 6 pulgadas,,,,,,,,
+BER01L125,Bergenia,14,674,si,bolsa 1 litros,,,,,,,,
+BES02L125,Bandera Española,14,497,si,bolsa 2 litros,,,,,,,,
+BIG08L105,Bignonia Morada,12,413,si,bolsa 8 litros,,,,,,,,
+BMA06L009,Black Magic,2,128,no,bolsa 6 litros,,,,,,,,
+BMI20L132,Bugambilia Minimorada,4,8,no,bolsa 20 litros|bolsa 10 litros,,,,,,,,
+BOM80L129,Bombax Bco,2,0,no,bolsa 80 litros,,,,,,,,
+BPA07L128,Bugambilia Paloma,25,2710,si,bolsa 7 litros,,,,,,,,
+BPL06L006,Bambu Plumoso,114,1369,si,bolsa 6 litros|bolsa 30 litros,,,,,,,,
+BRO06P121,Bromelia Pink,40,127,no,maceta negra 6 pulgadas,,,,,,,,
+BRO08P109,Bromelia Aechmea,5,313,si,maceta negra 8 pulgadas,,,,,,,,
+BRU04L010,Brunfelsia,43,86,no,bolsa 4 litros|bolsa 20 litros|bolsa 10 litros|bolsa 30 litros,,,,,,,,
+BSV07L114,Bugambilia San Vicente,60,130,no,bolsa 7 litros,,,,,,,,
+BUG12L200,Bugambilia,50,2847,si,bolsa 12 litros|bolsa 20 litros|bolsa 10 litros|bolsa 3 litros,,,,,,,,
+BUG07L128,Bugambilia Surtida,66,2759,si,bolsa 7 litros,,,,,,,,
+BUG08L001,Bugambilia Col,129,1628,si,bolsa 8 litros|bolsa 12 litros,,,,,,,,
+BUG15L128,Bugambilia Envarada Sur,3,801,si,bolsa 15 litros,,,,,,,,
+BUG50L128,Bugambilia Tronco,23,263,si,bolsa 50 litros|bolsa 60 litros,,,,,,,,
+CAC02L010,Cacahuatillo,120,6784,si,bolsa 2 litros,,,,,,,,
+CAC02L077,Cacao,49,454,si,bolsa 2 litros|bolsa 45 litros,,,,,,,,
+CAF08L124,Cafe,13,2,no,bolsa 8 litros|bolsa 3 litros,,,,,,,,
+CAL04L010,Caliandra,1,1239,si,bolsa 4 litros,,,,,,,,
+CAL08P109,Calathea,127,1907,si,maceta negra 8 pulgadas,,,,,,,,
+CAL30L105,Calistemo,2,212,si,bolsa 30 litros,,,,,,,,
+CAL60L103,Calistemo Llorón,1,17,no,bolsa 60 litros,,,,,,,,
+CAM40L170,Camelia,62,79,no,bolsa 40 litros,,,,,,,,
+CAN02L077,Canela,53,472,si,bolsa 2 litros|bolsa 6 litros,,,,,,,,
+CAN04L006,Cisus Antartica,20,174,no,bolsa 4 litros,,,,,,,,
+CAR03L077,Cariza Enana,3,2991,si,bolsa 3 litros|bolsa 2 litros,,,,,,,,
+CAR04L133,Cedro Arizona,20,20,no,bolsa 4 litros,,,,,,,,
+CBL03L169,Cedro Blanco,35,76,no,bolsa 3 litros,,,,,,,,
+CBR08L129,Cerezo Brasileño,83,96,no,bolsa 8 litros|bolsa 60 litros|bolsa 6 litros|bolsa 30 litros,,,,,,,,
+CCG08P006,Croto Cola De Gallo,200,8432,si,maceta negra 8 pulgadas|bolsa 6 litros|bolsa 2 litros,,,,,,,,
+CCH03L006,Cisus Charly,109,5664,si,bolsa 3 litros|maceta negra 10 pulgadas,,,,,,,,
+CED01L125,Cedron,7,512,si,bolsa 1 litros,,,,,,,,
+CEI20L129,Ceiba,4,28,no,bolsa 20 litros|bolsa 12 litros|bolsa 4 litros,,,,,,,,
+CEL01L125,Celosia,1,1187,si,bolsa 1 litros,,,,,,,,
+CEN15L006,Clavo Enano,30,659,si,bolsa 15 litros|bolsa 3 litros|bolsa 6 litros|bolsa 10 litros|bolsa 8 litros,,,,,,,,
+CER12L077,Cerezo Lapins,13,47,no,bolsa 12 litros,,,,,,,,
+CFR04L112,Cariza De Fruta,163,17,no,bolsa 4 litros,,,,,,,,
+CGA03L003,Croto Gallo,76,1518,si,bolsa 3 litros,,,,,,,,
+CHI03L125,Chile,2,498,si,bolsa 3 litros|bolsa 1 litros,,,,,,,,
+CHI05P109,Corazon En Un Hilo,10,0,no,maceta negra 5 pulgadas,,,,,,,,
+CHI08L115,Chicozapote,9,28,no,bolsa 8 litros|bolsa 45 litros,,,,,,,,
+CIN04L010,Clavel De La India,22,370,si,bolsa 4 litros|bolsa 18 litros,,,,,,,,
+CIN06P121,Canto De La India,50,827,si,maceta negra 6 pulgadas|maceta negra 7 pulgadas,,,,,,,,
+CIT30L006,Cipres Italiano,10,421,si,bolsa 30 litros|bolsa 2 litros|bolsa 60 litros|bolsa 45 litros|bolsa 4 litros,,,,,,,,
+CJA02L127,Criptomeria Japonica,64,1482,si,bolsa 2 litros|bolsa 8 litros,,,,,,,,
+CLE04L133,Cipres Leyland,2,293,si,bolsa 4 litros,,,,,,,,
+CLI03L077,Cedro Limon,2,1202,si,bolsa 3 litros|bolsa 4 litros,,,,,,,,
+CLI04L006,Clivia,25,624,si,bolsa 4 litros|bolsa 20 litros,,,,,,,,
+CLO06P009,Clorofito,75,5535,si,maceta negra 6 pulgadas,,,,,,,,
+CMA02L010,Croto Manzano,50,71,no,bolsa 2 litros,,,,,,,,
+CMA06P109,Corazon De Maria,5,1828,si,maceta negra 6 pulgadas,,,,,,,,
+CMO06P006,Cuna De Moises,23,2768,si,maceta negra 6 pulgadas|maceta negra 8 pulgadas,,,,,,,,
+CNU06P109,Cascara De Nuez,2,1302,si,maceta negra 6 pulgadas,,,,,,,,
+COL03P126,Colorata,6,0,no,maceta negra 3 pulgadas,,,,,,,,
+COL06P109,Coleo,63,1527,si,maceta negra 6 pulgadas,,,,,,,,
+COL08P126,Colgantes,1,2,no,maceta negra 8 pulgadas,,,,,,,,
+CON10P009,Conchita,5,187,no,maceta negra 10 pulgadas|maceta negra 5 pulgadas,,,,,,,,
+COR01L125,Col De Ornato,16,297,si,bolsa 1 litros,,,,,,,,
+COR02L077,Corteza -,12,12,no,bolsa 2 litros,,,,,,,,
+COR04L006,Croto Orange,96,4,no,bolsa 4 litros,,,,,,,,
+COT02L010,Cotoneaster Verde,70,3578,si,bolsa 2 litros,,,,,,,,
+CPE03L006,Croto Petra,310,16232,si,bolsa 3 litros|bolsa 6 litros|bolsa 2 litros|maceta negra 7 pulgadas|maceta negra 6 pulgadas|bolsa 15 litros|bolsa 4 litros,,,,,,,,
+CPE04L006,Croto Petra Amarillo,93,2377,si,bolsa 4 litros,,,,,,,,
+CPG03L006,Croto Pluma De Gallo,191,102,no,bolsa 3 litros,,,,,,,,
+CRI01L127,Criptomeria,109,3012,si,bolsa 1 litros,,,,,,,,
+CRI03L009,Crinum Enano,26,24,no,bolsa 3 litros,,,,,,,,
+CRI06P121,Criptantus,18,6,no,maceta negra 6 pulgadas,,,,,,,,
+CRI15L006,Crinum,5,38,no,bolsa 15 litros|bolsa 20 litros,,,,,,,,
+CSA03L077,Cerezo Sakura Rellena R Bonsai,7,103,no,bolsa 3 litros,,,,,,,,
+CSE12P114,Cuna Sensacion,5,863,si,maceta negra 12 pulgadas|maceta negra 11 pulgadas,,,,,,,,
+CSN30L077,Cerezo Sakura Napoleon,15,16,no,bolsa 30 litros|bolsa 20 litros,,,,,,,,
+CTO03L003,Croto Tornillo,152,8207,si,bolsa 3 litros|bolsa 2 litros|bolsa 15 litros|maceta negra 6 pulgadas,,,,,,,,
+CTO10L010,Clavo Tobira,64,197,no,bolsa 10 litros,,,,,,,,
+CUA30L129,Cuatecomate,1,27,no,bolsa 30 litros,,,,,,,,
+CVE02L164,Clavo Verde,35,693,si,bolsa 2 litros|bolsa 3 litros,,,,,,,,
+CVE45L077,Ciruelo Verde,2,4,no,bolsa 45 litros,,,,,,,,
+DAY03L009,Dayanela,201,168,no,bolsa 3 litros,,,,,,,,
+DCO06P121,Dracena Compacta,68,1488,si,maceta negra 6 pulgadas|bolsa 20 litros|maceta negra 10 pulgadas,,,,,,,,
+DCU08L009,Duranta Cuba,164,7732,si,bolsa 8 litros|bolsa 4 litros|bolsa 45 litros|bolsa 60 litros,,,,,,,,
+DDI20L077,Durazno Nectarino,2,2,no,bolsa 20 litros,,,,,,,,
+DEB03P126,Debi,6,0,no,maceta negra 3 pulgadas,,,,,,,,
+DGO20L009,Duranta Gold,3,223,si,bolsa 20 litros,,,,,,,,
+DIC10P109,Dichondria,20,30,no,maceta negra 10 pulgadas,,,,,,,,
+DIN40L157,Dracena Indivisa España,2,97,no,bolsa 40 litros,,,,,,,,
+DIP06P200,Diplademia,75,605,si,maceta negra 6 pulgadas,,,,,,,,
+DMA20L001,Dracena Marginata,21,187,no,bolsa 20 litros|bolsa 10 litros|maceta negra 11 pulgadas|maceta negra 6 pulgadas,,,,,,,,
+DOL04L115,Dolar,30,80,no,bolsa 4 litros,,,,,,,,
+DRA45L006,Dracena Draco,2,48,no,bolsa 45 litros,,,,,,,,
+DRO04L200,Dracena Roja,150,2714,si,bolsa 4 litros|bolsa 6 litros,,,,,,,,
+DRO06P126,Dosty Rous,2,1,no,maceta negra 6 pulgadas,,,,,,,,
+DUR70L077,Durazno Oro Azteka,1,3,no,bolsa 70 litros,,,,,,,,
+DWA12P157,Dracena Warneki Lemon,6,51,no,maceta negra 12 pulgadas,,,,,,,,
+EAM06P006,Euphorbia Mini Roja,6,1206,si,maceta negra 6 pulgadas,,,,,,,,
+ERO08P006,Euphorbia Roja,55,668,si,maceta negra 8 pulgadas,,,,,,,,
+EBA60L145,Ebano,3,0,no,bolsa 60 litros,,,,,,,,
+EES02L105,Esparrago Springueri,82,4314,si,bolsa 2 litros|maceta negra 10 pulgadas|maceta negra 6 pulgadas,,,,,,,,
+ELE03L009,Eleagnus,53,1371,si,bolsa 3 litros,,,,,,,,
+ELI01L125,Elia,26,108,no,bolsa 1 litros,,,,,,,,
+EME06P006,Esparrago Meyeri,178,11868,si,maceta negra 6 pulgadas|bolsa 6 litros|bolsa 2 litros|bolsa 8 litros|bolsa 3 litros|maceta negra 11 pulgadas,,,,,,,,
+EPL06P006,Esparrago Plumoso,57,8321,si,maceta negra 6 pulgadas,,,,,,,,
+EPL18L010,Eleagnus Plateado,20,400,si,bolsa 18 litros,,,,,,,,
+ERI03L125,Erika,3,100,no,bolsa 3 litros|bolsa 45 litros,,,,,,,,
+ERO60L006,Encino Rojo,1,38,no,bolsa 60 litros|bolsa 80 litros,,,,,,,,
+ESA06P003,Euphorbia Salmon,20,1650,si,maceta negra 6 pulgadas,,,,,,,,
+ESP06P130,Espantamoscas,51,3894,si,maceta negra 6 pulgadas,,,,,,,,
+EST01L125,Estafiate,18,81,no,bolsa 1 litros,,,,,,,,
+ESV60L124,Encino Siempre Verde,1,3,no,bolsa 60 litros,,,,,,,,
+ETI01L003,Euphorbia Tirucalli,99,574,si,bolsa 1 litros|maceta negra 6 pulgadas|bolsa 8 litros,,,,,,,,
+EUC06P106,Eucharis,15,6,no,maceta negra 6 pulgadas,,,,,,,,
+EUF06P006,Euphorbia Mini,117,3032,si,maceta negra 6 pulgadas|maceta negra 5 pulgadas,,,,,,,,
+EUG30L170,Eugenia,5,5,no,bolsa 30 litros,,,,,,,,
+EUP06P011,Euphorbia,19,1,no,maceta negra 6 pulgadas|maceta negra 10 pulgadas,,,,,,,,
+EVO01L077,Evonimo,79,12184,si,bolsa 1 litros,,,,,,,,
+FBA07P168,Ficus Bambino,93,79,no,maceta negra 7 pulgadas,,,,,,,,
+FBE10L136,Ficus Benjamina,83,27,no,bolsa 10 litros|bolsa 6 litros|bolsa 20 litros|bolsa 30 litros|bolsa 45 litros,,,,,,,,
+FLA30L006,Flama,28,22,no,bolsa 30 litros|bolsa 10 litros,,,,,,,,
+FEI45L124,Feijoa,1,51,no,bolsa 45 litros|bolsa 80 litros,,,,,,,,
+FFO45L145,Fouquieria Formosa,2,0,no,bolsa 45 litros,,,,,,,,
+FHE45L077,Ficus Hector,1,45,no,bolsa 45 litros|bolsa 20 litros,,,,,,,,
+FMA65L140,Flor De Mayo,2,14,no,bolsa 65 litros|bolsa 10 litros|bolsa 75 litros|bolsa 80 litros,,,,,,,,
+FMO15L077,Ficus Moclame,1,51,no,bolsa 15 litros,,,,,,,,
+FOR04L077,Forneo Verde,38,82,no,bolsa 4 litros,,,,,,,,
+FPA04L077,Ficus Pandurata,7,581,si,bolsa 4 litros|bolsa 20 litros|bolsa 60 litros|maceta negra 8 pulgadas|bolsa 30 litros,,,,,,,,
+FPE06P006,Ficus Petiolaris,23,611,si,maceta negra 6 pulgadas|bolsa 10 litros,,,,,,,,
+FRE02L113,Fresno,49,30,no,bolsa 2 litros|bolsa 20 litros,,,,,,,,
+FRE06P125,Fresa,25,923,si,maceta negra 6 pulgadas,,,,,,,,
+FRO30L103,Falso Romero,8,265,si,bolsa 30 litros|bolsa 8 litros,,,,,,,,
+FSL10L153,Ficus Star Ligth,13,27,no,bolsa 10 litros,,,,,,,,
+FTR04L010,Ficus Triangularis,37,174,no,bolsa 4 litros|bolsa 10 litros|bolsa 45 litros,,,,,,,,
+GAL10L006,Galathea,18,508,si,bolsa 10 litros,,,,,,,,
+GAR20L170,Gardenia,6,0,no,bolsa 20 litros,,,,,,,,
+GAS04P126,Gasteria,8,30,no,maceta negra 4 pulgadas|maceta negra 6 pulgadas|maceta negra 3 pulgadas,,,,,,,,
+GCA20L077,Guayabo Calvillo,2,10,no,bolsa 20 litros|bolsa 10 litros,,,,,,,,
+GCA12L010,Guayabo California,63,753,si,bolsa 12 litros,,,,,,,,
+GFI05P130,Goldfish,59,72,no,maceta negra 5 pulgadas|maceta negra 6 pulgadas,,,,,,,,
+GJA04L010,Guayabo Japones,20,266,si,bolsa 4 litros|bolsa 18 litros|bolsa 45 litros|bolsa 20 litros|bolsa 60 litros,,,,,,,,
+GOS04P003,Garrita De Oso Varigado,68,121,no,maceta negra 4 pulgadas,,,,,,,,
+GPE10L010,Guayaba Peruana,20,0,no,bolsa 10 litros,,,,,,,,
+GPI30L006,Guayabo Piña,5,33,no,bolsa 30 litros,,,,,,,,
+GRA45L010,Granada,1,19,no,bolsa 45 litros,,,,,,,,
+GRE30L113,Grevilia,11,5,no,bolsa 30 litros|bolsa 65 litros,,,,,,,,
+HMO08L129,Guayacan Rosa,1,87,no,bolsa 8 litros|bolsa 45 litros|bolsa 80 litros|bolsa 3 litros,,,,,,,,
+GUA02P116,Guanabana,64,29,no,maceta negra 2 pulgadas|bolsa 30 litros|bolsa 60 litros,,,,,,,,
+GUA03L113,Guamuchil,58,0,no,bolsa 3 litros,,,,,,,,
+GUA03L129,Guaje,4,74,no,bolsa 3 litros,,,,,,,,
+GUA04L077,Guayabo Rosa,1,297,si,bolsa 4 litros,,,,,,,,
+GUA12L124,Guayabo,11,1,no,bolsa 12 litros,,,,,,,,
+HAM04L010,Hule Amarillo,39,126,no,bolsa 4 litros,,,,,,,,
+HAM12L116,Heliconia Amarilla,85,520,si,bolsa 12 litros,,,,,,,,
+HAR05P130,Helecho Arroz,57,246,si,maceta negra 5 pulgadas,,,,,,,,
+HAU11P077,Helecho Australiano,3,1681,si,maceta negra 11 pulgadas|maceta negra 14 pulgadas,,,,,,,,
+HAZ10P125,Hiedra Azul,17,997,si,maceta negra 10 pulgadas,,,,,,,,
+HBL08L006,Hule Blanco,4,162,no,bolsa 8 litros,,,,,,,,
+HBO10P001,Helecho Boston***Oferta***60,51,1053,si,maceta negra 10 pulgadas,,,,,,,,
+HBS05P077,Helecho Blue Star,19,2636,si,maceta negra 5 pulgadas|maceta negra 6 pulgadas|maceta negra 3 pulgadas,,,,,,,,
+HBU06P009,Hierba Buena,90,260,si,maceta negra 6 pulgadas,,,,,,,,
+HCA11P006,Hule Cavernet,106,927,si,maceta negra 11 pulgadas|maceta negra 10 pulgadas|bolsa 2 litros|maceta negra 12 pulgadas,,,,,,,,
+HCA06P106,Helecho Cuerno De Alce,26,2844,si,maceta negra 6 pulgadas|maceta negra 4 pulgadas|maceta negra 10 pulgadas|maceta negra 5 pulgadas,,,,,,,,
+HCA06P200,Hoya Carnosa,6,65,no,maceta negra 6 pulgadas,,,,,,,,
+HCB10L116,Heliconia Cola De Borrego,65,55,no,bolsa 10 litros,,,,,,,,
+HCI06P106,Helecho Cilantrillo,22,5431,si,maceta negra 6 pulgadas,,,,,,,,
+HCV06P106,Helecho Cuero Varigado,6,102,no,maceta negra 6 pulgadas,,,,,,,,
+HDA06P106,Helecho Davalia,5,1210,si,maceta negra 6 pulgadas|maceta negra 10 pulgadas,,,,,,,,
+HEL20L009,Hoja Elegante,62,3964,si,bolsa 20 litros|bolsa 6 litros|bolsa 60 litros|bolsa 45 litros|bolsa 4 litros,,,,,,,,
+HEM03L105,Hemerocalis,44,610,si,bolsa 3 litros,,,,,,,,
+HEN03L077,Heliconia Enana,46,2294,si,bolsa 3 litros|bolsa 4 litros,,,,,,,,
+HGA01L125,Hiedra Galvia Española,27,3177,si,bolsa 1 litros,,,,,,,,
+HIN01L125,Hinojo,9,194,no,bolsa 1 litros,,,,,,,,
+HKE05P168,Hoya Kerry,51,438,si,maceta negra 5 pulgadas|maceta negra 6 pulgadas,,,,,,,,
+HMA06L116,Heliconia Mariposa,8,13,no,bolsa 6 litros,,,,,,,,
+HMI06P077,Helecho Microsorum,48,13355,si,maceta negra 6 pulgadas|maceta negra 10 pulgadas,,,,,,,,
+HMO10P003,Hiedra Morada,32,489,si,maceta negra 10 pulgadas,,,,,,,,
+HNA01L127,Hinoki Nana,165,2312,si,bolsa 1 litros|bolsa 2 litros|bolsa 8 litros,,,,,,,,
+HNA06P106,Helecho Nido De Ave,7,2941,si,maceta negra 6 pulgadas|maceta negra 8 pulgadas,,,,,,,,
+HNO06P125,Huele De Noche,3,1678,si,maceta negra 6 pulgadas,,,,,,,,
+HOL01L125,Hierba De Olor,106,20586,si,bolsa 1 litros|maceta negra 5 pulgadas,,,,,,,,
+HOR08P003,Hortencia,96,4480,si,maceta negra 8 pulgadas|maceta negra 10 pulgadas,,,,,,,,
+HOS03P106,Helecho Osaka,18,66,no,maceta negra 3 pulgadas|maceta negra 8 pulgadas,,,,,,,,
+HPA10L153,Hamelia Patens,45,262,si,bolsa 10 litros,,,,,,,,
+HPE04L077,Helecho Peine,12,11907,si,bolsa 4 litros|bolsa 3 litros,,,,,,,,
+HPT08L116,Heliconia Pico De Tucan,32,2186,si,bolsa 8 litros,,,,,,,,
+HRU08P006,Hule Rubi,122,175,no,maceta negra 8 pulgadas,,,,,,,,
+HRU10P077,Helecho Rufles,6,7,no,maceta negra 10 pulgadas,,,,,,,,
+HSL06P106,Helecho Silver Lady,5,1240,si,maceta negra 6 pulgadas,,,,,,,,
+HSU10L125,Hiedra Sueca/Inglesa,26,1001,si,bolsa 10 litros,,,,,,,,
+HUI18L129,Huizache,2,24,no,bolsa 18 litros,,,,,,,,
+HUM01L101,Humiquick,15,72,no,bolsa 1 litros,,,,,,,,
+HUV18L010,Hule Cavernet Bonsai,1,4,no,bolsa 18 litros,,,,,,,,
+HYP06P109,Hypoeste,67,1735,si,maceta negra 6 pulgadas,,,,,,,,
+ICA03L006,Ixora Carla,196,18899,si,bolsa 3 litros,,,,,,,,
+IEN03L006,Ixora Enana Surtida-.30,203,11379,si,bolsa 3 litros,,,,,,,,
+INS01L125,Insulina,1,169,no,bolsa 1 litros,,,,,,,,
+IRE08L006,Ixora Reyna,79,4000,si,bolsa 8 litros,,,,,,,,
+IRI06P125,Iris,49,791,si,maceta negra 6 pulgadas,,,,,,,,
+JAB20L105,Jaboticabo,7,75,no,bolsa 20 litros|bolsa 18 litros|bolsa 50 litros|bolsa 10 litros|bolsa 40 litros,,,,,,,,
+JAC04L077,Jacaranda,1,289,si,bolsa 4 litros|bolsa 2 litros|bolsa 65 litros|bolsa 45 litros|bolsa 60 litros|bolsa 80 litros,,,,,,,,
+JAC60L170,Jacaranda Bca,12,44,no,bolsa 60 litros|bolsa 10 litros,,,,,,,,
+JAD15L130,Jade,13,60,no,bolsa 15 litros,,,,,,,,
+JAR10L009,Jazmin De Arabia,63,384,si,bolsa 10 litros,,,,,,,,
+JAR30L125,Jarilla,1,0,no,bolsa 30 litros,,,,,,,,
+JAZ20L006,Junipero Azul,4,1060,si,bolsa 20 litros,,,,,,,,
+JES04L133,Junipero Sparta,20,0,no,bolsa 4 litros,,,,,,,,
+JES08L010,Junipero Estrella,19,1052,si,bolsa 8 litros,,,,,,,,
+JGM10L127,Junipero Green Mountain,16,386,si,bolsa 10 litros|maceta negra 12 pulgadas,,,,,,,,
+JHE02L164,Jazmin Hembra,79,375,si,bolsa 2 litros,,,,,,,,
+JPN03L010,Junipero Procumbens Nana,1,2361,si,bolsa 3 litros|bolsa 4 litros|maceta negra 10 pulgadas|bolsa 8 litros,,,,,,,,
+JSJ03L010,Junipero San Jose,106,1160,si,bolsa 3 litros|bolsa 8 litros,,,,,,,,
+JTA20L006,Junipero Tapizante,40,1428,si,bolsa 20 litros|bolsa 4 litros|bolsa 45 litros,,,,,,,,
+LAF06P170,Lechero Africano,33,62,no,maceta negra 6 pulgadas,,,,,,,,
+LAM10L136,Laurel Amarillo,30,0,no,bolsa 10 litros,,,,,,,,
+LAN02L077,Lantana,24,35621,si,bolsa 2 litros,,,,,,,,
+LAV01L125,Lavanda,11,7080,si,bolsa 1 litros|bolsa 3 litros,,,,,,,,
+LBE04L105,Luz De Bengala,46,4619,si,bolsa 4 litros,,,,,,,,
+LCH12L120,Lima Chichi,10,374,si,bolsa 12 litros,,,,,,,,
+LCO10L120,Limon Colimeño,9,1236,si,bolsa 10 litros|bolsa 20 litros,,,,,,,,
+LEU03L009,Leucophilum,33,5057,si,bolsa 3 litros,,,,,,,,
+LEU10L120,Limon Eureka,14,333,si,bolsa 10 litros,,,,,,,,
+LIC45L152,Lichi,2,6,no,bolsa 45 litros,,,,,,,,
+LIM10L013,Lima,38,5,no,bolsa 10 litros,,,,,,,,
+LIQ03L006,Liquidambar,4,179,no,bolsa 3 litros,,,,,,,,
+LNI01L125,Lagrima De Niño,32,1101,si,bolsa 1 litros,,,,,,,,
+LOR08P006,Loropetalo,86,6859,si,maceta negra 8 pulgadas,,,,,,,,
+LOR15L116,Lluvia De Oro,1,191,no,bolsa 15 litros|bolsa 18 litros|bolsa 40 litros,,,,,,,,
+LOV03P126,Lovery Rose,5,4,no,maceta negra 3 pulgadas,,,,,,,,
+LPE06L001,Limon Persa,18,1682,si,bolsa 6 litros|bolsa 3 litros|bolsa 10 litros|bolsa 8 litros|bolsa 20 litros|bolsa 30 litros|bolsa 60 litros|bolsa 12 litros,,,,,,,,
+LPE08L009,Lirio Persa Bco,79,508,si,bolsa 8 litros,,,,,,,,
+LRE12L120,Limon Real,24,542,si,bolsa 12 litros,,,,,,,,
+LRO10P134,Lirio Rojo,2,7,no,maceta negra 10 pulgadas,,,,,,,,
+LVE12L136,Laurel Verde,55,6,no,bolsa 12 litros|bolsa 30 litros,,,,,,,,
+MAG03L010,Magnolia,49,1439,si,bolsa 3 litros|bolsa 20 litros|bolsa 60 litros|bolsa 80 litros|bolsa 10 litros|bolsa 30 litros,,,,,,,,
+MAJ06L153,Majagua,20,604,si,bolsa 6 litros|bolsa 45 litros|bolsa 4 litros|bolsa 15 litros,,,,,,,,
+MAM08L115,Mamey,15,38,no,bolsa 8 litros|bolsa 45 litros,,,,,,,,
+MAN04L001,Mandevilia Amarilla,106,4402,si,bolsa 4 litros,,,,,,,,
+MAN10L120,Mango,45,1959,si,bolsa 10 litros|bolsa 45 litros|bolsa 6 litros,,,,,,,,
+MAU30L170,Maple Australiano,1,0,no,bolsa 30 litros,,,,,,,,
+MCA10L120,Mandarina Calamondi,5,544,si,bolsa 10 litros|bolsa 20 litros,,,,,,,,
+MCJ03L077,Manzana California,48,360,si,bolsa 3 litros,,,,,,,,
+MCO10L120,Mandarina Concua,8,642,si,bolsa 10 litros|bolsa 45 litros,,,,,,,,
+MEM45L200,Membrillo,1,0,no,bolsa 45 litros,,,,,,,,
+MEN04P009,Menta,59,665,si,maceta negra 4 pulgadas,,,,,,,,
+MEZ02L113,Mezquite Mexicano,74,70,no,bolsa 2 litros,,,,,,,,
+MEZ10L006,Mezquite,24,194,no,bolsa 10 litros,,,,,,,,
+MGO04L077,Manzana Golden,10,312,si,bolsa 4 litros,,,,,,,,
+MIR03L119,Mirto,37,3525,si,bolsa 3 litros|bolsa 1 litros,,,,,,,,
+MJA60L170,Maple Japones,1,10,no,bolsa 60 litros,,,,,,,,
+MON01L006,Moneda,50,6494,si,bolsa 1 litros,,,,,,,,
+MON05P130,Monalisa,134,390,si,maceta negra 5 pulgadas,,,,,,,,
+MPI10L120,Mandarina Piñatera,6,906,si,bolsa 10 litros|bolsa 45 litros|bolsa 60 litros,,,,,,,,
+MRE10L120,Mandarina Reyna,5,489,si,bolsa 10 litros,,,,,,,,
+MRO03L077,Manzana Red Delicius,80,899,si,bolsa 3 litros,,,,,,,,
+MST10L120,Mandarina Sangre De Toro,36,4,no,bolsa 10 litros,,,,,,,,
+MTA10L120,Mandarina Tangerina,4,322,si,bolsa 10 litros|bolsa 60 litros,,,,,,,,
+MUI01L125,Muicle,16,565,si,bolsa 1 litros,,,,,,,,
+MVE04L077,Manzana Verde,19,40,no,bolsa 4 litros,,,,,,,,
+NAN03L116,Nanche,8,154,no,bolsa 3 litros|bolsa 4 litros,,,,,,,,
+NAN15L006,Nandina,74,697,si,bolsa 15 litros,,,,,,,,
+NBR04P126,Neon Break,8,5,no,maceta negra 4 pulgadas|maceta negra 6 pulgadas,,,,,,,,
+NBU07P159,Noche Buena,1,176,no,maceta negra 7 pulgadas,,,,,,,,
+NCA20L013,Naranja Calamondi,5,20,no,bolsa 20 litros,,,,,,,,
+NCP08L077,Nogal Cascara De Papel,28,132,no,bolsa 8 litros,,,,,,,,
+NCP45L152,Nuez Cascara De Papel,1,0,no,bolsa 45 litros,,,,,,,,
+NEE10L115,Neem,15,20,no,bolsa 10 litros,,,,,,,,
+NEN10P134,Nenunfares,1,11,no,maceta negra 10 pulgadas,,,,,,,,
+NIS60L105,Nispero,2,41,no,bolsa 60 litros,,,,,,,,
+NMI10L120,Naranja Miniola,13,87,no,bolsa 10 litros,,,,,,,,
+NMO01L125,No Me Olvides,10,693,si,bolsa 1 litros,,,,,,,,
+NPA04L006,Nevando En Paris Bco,103,100,no,bolsa 4 litros,,,,,,,,
+NUT01L154,Nutrimento Para Orq.,2,11,no,bolsa 1 litros,,,,,,,,
+NWA10L013,Naranja Washintonia Red,11,24,no,bolsa 10 litros,,,,,,,,
+OAR03L113,Orquidea De Arbol,144,182,no,bolsa 3 litros|bolsa 20 litros|bolsa 65 litros,,,,,,,,
+OFR20L108,Olivo De Fruta,39,41,no,bolsa 20 litros|bolsa 4 litros|bolsa 45 litros|bolsa 10 litros,,,,,,,,
+ONE60L006,Olivo Negro,1,11,no,bolsa 60 litros,,,,,,,,
+OPH06P003,Orquidea Phalenopsis,20,648,si,maceta negra 6 pulgadas,,,,,,,,
+OPU06L124,Opuntia,56,159,no,bolsa 6 litros,,,,,,,,
+ORE01L125,Oregano,5,1079,si,bolsa 1 litros|maceta negra 11 pulgadas,,,,,,,,
+OVI02L010,Oro Viejo,79,344,si,bolsa 2 litros,,,,,,,,
+PAB10L009,Palma Abanico,39,78,no,bolsa 10 litros,,,,,,,,
+PAC08P001,Pachypodium,29,32,no,maceta negra 8 pulgadas|bolsa 30 litros|maceta negra 14 pulgadas,,,,,,,,
+PAC45L153,Pachyra,5,5,no,bolsa 45 litros,,,,,,,,
+PAK06P010,Paquistaqui,105,5971,si,maceta negra 6 pulgadas|bolsa 8 litros,,,,,,,,
+PAM60L006,Pampagras,6,114,no,bolsa 60 litros,,,,,,,,
+PAN30L011,Pandanus,11,55,no,bolsa 30 litros|maceta negra 11 pulgadas,,,,,,,,
+PAP01L116,Papaya,12,19,no,bolsa 1 litros,,,,,,,,
+PAP30L105,Papaya Maradol,37,116,no,bolsa 30 litros,,,,,,,,
+PAR06L200,Palma Areka,50,449,si,bolsa 6 litros|bolsa 10 litros|bolsa 60 litros,,,,,,,,
+PAR50L129,Parota,1,5,no,bolsa 50 litros,,,,,,,,
+PAZ03L006,Plumbago Blanco,147,5420,si,bolsa 3 litros|bolsa 6 litros,,,,,,,,
+PAZ03L009,Plumbago Azul,3,1458,si,bolsa 3 litros|bolsa 20 litros,,,,,,,,
+PBA10L006,Palma Bambu,2,159,no,bolsa 10 litros,,,,,,,,
+PBI30L077,Palma Bismarquia,4,51,no,bolsa 30 litros,,,,,,,,
+PBL12L010,Palo Blanco,50,0,no,bolsa 12 litros,,,,,,,,
+PBR07P077,Palo De Brasil,5,345,si,maceta negra 7 pulgadas|maceta negra 6 pulgadas|maceta negra 5 pulgadas|maceta negra 8 pulgadas|bolsa 4 litros|bolsa 20 litros|bolsa 1 litros|bolsa 6 litros|bolsa 8 litros|maceta negra 9 pulgadas,,,,,,,,
+PED04L011,Pedilantus,98,3797,si,bolsa 4 litros|bolsa 10 litros|bolsa 20 litros,,,,,,,,
+PCA06P006,Palma Camedor,155,3164,si,maceta negra 6 pulgadas|bolsa 6 litros|bolsa 20 litros|maceta negra 5 pulgadas,,,,,,,,
+PCA06P001,Pasto Canguro,39,1569,si,maceta negra 6 pulgadas,,,,,,,,
+PCI20L006,Palma Cica Dion Spinolosum,7,4,no,bolsa 20 litros,,,,,,,,
+PCO01L125,Pasto Coreano,13,781,si,bolsa 1 litros,,,,,,,,
+PCO11P001,Philodendro Congo,49,499,si,maceta negra 11 pulgadas|maceta negra 6 pulgadas,,,,,,,,
+PCO08L011,Palma Coco Comun,4,2220,si,bolsa 8 litros,,,,,,,,
+PCP20L009,Palma Coco Plumoso,6,195,no,bolsa 20 litros|bolsa 60 litros|bolsa 8 litros,,,,,,,,
+PCR04L116,Palma Crepe,20,74,no,bolsa 4 litros,,,,,,,,
+PCZ18L010,Palma Cola De Zorro,32,6,no,bolsa 18 litros,,,,,,,,
+PDA04L151,Palma Datilera,8,12,no,bolsa 4 litros|bolsa 15 litros|bolsa 45 litros,,,,,,,,
+PDO20L009,Platano Dominico,1,32,no,bolsa 20 litros,,,,,,,,
+PDU08L129,Palo Dulce,12,82,no,bolsa 8 litros,,,,,,,,
+PEL10P109,Peluca,10,798,si,maceta negra 10 pulgadas,,,,,,,,
+PEN01L125,Pensamiento,7,337,si,bolsa 1 litros,,,,,,,,
+PEP06P109,Peperonia,51,5042,si,maceta negra 6 pulgadas|maceta negra 5 pulgadas|maceta negra 4 pulgadas,,,,,,,,
+PER10L153,Peregrina,20,231,si,bolsa 10 litros,,,,,,,,
+PES08L077,Palma Estrella,2,298,si,bolsa 8 litros,,,,,,,,
+PFI01L125,Pasto Fistuca,89,3947,si,bolsa 1 litros,,,,,,,,
+PFR10L077,Piñon De Fruta,2,132,no,bolsa 10 litros,,,,,,,,
+PGO80L129,Pimienta Gorda,1,0,no,bolsa 80 litros,,,,,,,,
+PHI05P011,Philodendro,61,39,no,maceta negra 5 pulgadas,,,,,,,,
+PHO20L120,Philodendro Hope,6,708,si,bolsa 20 litros|bolsa 6 litros,,,,,,,,
+PHO10L006,Photinea,66,270,si,bolsa 10 litros,,,,,,,,
+PIM06P106,Philodendro Imperial Rojo,19,264,si,maceta negra 6 pulgadas,,,,,,,,
+PIN12L006,Piñanona,63,3483,si,bolsa 12 litros|bolsa 15 litros|bolsa 6 litros|bolsa 2 litros|bolsa 4 litros|bolsa 30 litros|bolsa 10 litros|bolsa 20 litros|maceta negra 7 pulgadas,,,,,,,,
+PIN10L009,Piña,28,885,si,bolsa 10 litros,,,,,,,,
+PIN45L009,Piña Ornamental,2,7,no,bolsa 45 litros,,,,,,,,
+PKE45L077,Palma Kerpiz,2,79,no,bolsa 45 litros|bolsa 20 litros|bolsa 8 litros,,,,,,,,
+PLA03L151,Platanillo,44,5152,si,bolsa 3 litros,,,,,,,,
+PLI04L200,Palma Licuala,30,30,no,bolsa 4 litros,,,,,,,,
+PLR02L105,Pasto Liriope Rayado,67,8788,si,bolsa 2 litros|bolsa 7 litros|bolsa 6 litros,,,,,,,,
+PLT15P009,Papiro Litlle Tut,1,45,no,maceta negra 15 pulgadas,,,,,,,,
+PLU04L009,Plumifero,21,102,no,bolsa 4 litros,,,,,,,,
+PLU08L009,Plumero,4,1580,si,bolsa 8 litros,,,,,,,,
+PLU10L006,Plumeria,1,82,no,bolsa 10 litros,,,,,,,,
+PLV02L105,Pasto Liriope Verde,55,2687,si,bolsa 2 litros|bolsa 8 litros|bolsa 6 litros,,,,,,,,
+PMA03L077,Pera Mantequilla,39,648,si,bolsa 3 litros,,,,,,,,
+PMA06L009,Platano Macho,59,44,no,bolsa 6 litros,,,,,,,,
+PMO01L105,Pasto Monki,30,18830,si,bolsa 1 litros,,,,,,,,
+POD80L006,Podocarpus,3,223,si,bolsa 80 litros|bolsa 20 litros,,,,,,,,
+PVE30L006,Podocarpus Verde,1,66,no,bolsa 30 litros|bolsa 45 litros,,,,,,,,
+POL06L115,Polyalthia,1,1,no,bolsa 6 litros|bolsa 15 litros,,,,,,,,
+PON05P134,Pontederia,6,196,no,maceta negra 5 pulgadas,,,,,,,,
+POR03P126,Porpusurum,6,0,no,maceta negra 3 pulgadas,,,,,,,,
+POX06P134,Pasto Oxigenado,3,49,no,maceta negra 6 pulgadas,,,,,,,,
+PPR02L200,Pasto Penicetum Rojo,50,1723,si,bolsa 2 litros,,,,,,,,
+PPT03P126,Pink Ptrumper,11,20,no,maceta negra 3 pulgadas,,,,,,,,
+PPV02L200,Pasto Penicetum Verde,30,11042,si,bolsa 2 litros,,,,,,,,
+PRA10L011,Palma Rafiz,14,852,si,bolsa 10 litros|maceta negra 10 pulgadas,,,,,,,,
+PRE07P109,Philodendro Red,8,421,si,maceta negra 7 pulgadas,,,,,,,,
+PRE20L117,Palma Real,10,4,no,bolsa 20 litros,,,,,,,,
+PRI80L140,Primavera Rosa,1,51,no,bolsa 80 litros,,,,,,,,
+PRO30L105,Palma Robelina,8,518,si,bolsa 30 litros|bolsa 5 litros|bolsa 3 litros|bolsa 45 litros|bolsa 10 litros|bolsa 15 litros,,,,,,,,
+PRO30L129,Papelillo Rojo,3,1,no,bolsa 30 litros|bolsa 45 litros,,,,,,,,
+PSE08L001,Philodendro Sellum,59,14042,si,bolsa 8 litros|bolsa 10 litros|bolsa 15 litros|bolsa 20 litros|bolsa 6 litros|maceta negra 6 pulgadas|bolsa 12 litros|maceta negra 10 pulgadas,,,,,,,,
+PSI07P109,Philodendro Silvia,15,25,no,maceta negra 7 pulgadas,,,,,,,,
+PTW02L009,Pasto Twister,80,219,si,bolsa 2 litros,,,,,,,,
+PVE08P109,Philodendro Verde,9,274,si,maceta negra 8 pulgadas|maceta negra 3 pulgadas,,,,,,,,
+PVI06P001,Philodendro Virking,9,658,si,maceta negra 6 pulgadas|maceta negra 8 pulgadas,,,,,,,,
+PVI60L120,Palma Del Viajero,3,107,no,bolsa 60 litros,,,,,,,,
+PWA60L105,Palma Washingtonia,2,18,no,bolsa 60 litros,,,,,,,,
+PXA08L006,Philodendro Xanadu,58,19889,si,bolsa 8 litros|bolsa 30 litros|bolsa 15 litros|maceta negra 10 pulgadas|bolsa 20 litros|bolsa 45 litros,,,,,,,,
+PZA07P003,Palma Zamioculca,23,139,no,maceta negra 7 pulgadas|maceta negra 8 pulgadas,,,,,,,,
+PZA20L105,Palma Zamia,2,11,no,bolsa 20 litros|bolsa 60 litros|maceta negra 8 pulgadas,,,,,,,,
+QUI20L006,Quisqualis,9,62,no,bolsa 20 litros,,,,,,,,
+RCO02L167,Rosa Coster,207,1258,si,bolsa 2 litros|bolsa 6 litros,,,,,,,,
+RCO05P003,Rosario Colgante,41,16,no,maceta negra 5 pulgadas,,,,,,,,
+RDO40L145,Rosa Dorada,1,10,no,bolsa 40 litros,,,,,,,,
+REA01L149,Rea Tricolor,60,440,si,bolsa 1 litros,,,,,,,,
+RIN01L011,Rinonina,83,19070,si,bolsa 1 litros,,,,,,,,
+RNU08L169,Romero De Nuez,44,406,si,bolsa 8 litros|bolsa 2 litros,,,,,,,,
+ROC01L125,Rocio,67,6329,si,bolsa 1 litros,,,,,,,,
+ROM02L119,Romero,20,9717,si,bolsa 2 litros|bolsa 10 litros|bolsa 8 litros|bolsa 3 litros,,,,,,,,
+ROS03L167,Rosal,9,343,si,bolsa 3 litros|bolsa 2 litros,,,,,,,,
+RRA08L120,Romero Rastrero,55,5,no,bolsa 8 litros,,,,,,,,
+SAB11P170,Sabila Reyna,19,590,si,maceta negra 11 pulgadas,,,,,,,,
+SAL02L119,Salvia Leucanta,19,10320,si,bolsa 2 litros,,,,,,,,
+SAN03L105,Sanciviera,72,4957,si,bolsa 3 litros|bolsa 4 litros|maceta negra 6 pulgadas|maceta negra 5 pulgadas,,,,,,,,
+SAP06P009,Sapito,30,434,si,maceta negra 6 pulgadas,,,,,,,,
+SCO01L125,Salvia Comestible,5,670,si,bolsa 1 litros|bolsa 2 litros,,,,,,,,
+SED06P003,Sedum  Reflexon,57,2017,si,maceta negra 6 pulgadas,,,,,,,,
+SEN10L009,Senna Alata,39,1065,si,bolsa 10 litros,,,,,,,,
+SIC02L113,Sicomoro,65,22,no,bolsa 2 litros,,,,,,,,
+SPI06P006,Singonio,21,3739,si,maceta negra 6 pulgadas|maceta negra 8 pulgadas|bolsa 2 litros|maceta negra 11 pulgadas|maceta negra 5 pulgadas,,,,,,,,
+SLI45L105,Sangre Libaneza,4,4,no,bolsa 45 litros,,,,,,,,
+SLL15L077,Sauce Lloron,4,237,si,bolsa 15 litros|bolsa 4 litros,,,,,,,,
+SNI45L009,Stirilitzia Nicolae,18,83,no,bolsa 45 litros|bolsa 30 litros,,,,,,,,
+SOC04P126,Socialis,12,9,no,maceta negra 4 pulgadas,,,,,,,,
+SPI03L153,Spirea Bca/Rosa,24,71,no,bolsa 3 litros,,,,,,,,
+SPI10L153,Spirea Bca,18,481,si,bolsa 10 litros,,,,,,,,
+SUC03P126,Suculenta,223,588,si,maceta negra 3 pulgadas|maceta negra 6 pulgadas|maceta negra 8 pulgadas|maceta negra 4 pulgadas|maceta negra 1 pulgadas|maceta negra 2 pulgadas,,,,,,,,
+SVI01L125,Siempre Viva,24,330,si,bolsa 1 litros,,,,,,,,
+TAB04L129,Tabachin Silvestre,119,2854,si,bolsa 4 litros,,,,,,,,
+TAB60L003,Tabachin,3,79,no,bolsa 60 litros|bolsa 7 litros|bolsa 20 litros|bolsa 30 litros|bolsa 80 litros,,,,,,,,
+TAF03L077,Tulipan Africano,13,178,no,bolsa 3 litros|bolsa 12 litros|bolsa 40 litros|bolsa 45 litros,,,,,,,,
+TAM04L010,Tamarindo,27,33,no,bolsa 4 litros,,,,,,,,
+TAM30L125,Tamarix,8,0,no,bolsa 30 litros,,,,,,,,
+TAR08L077,Trueno De Arbol,35,141,no,bolsa 8 litros,,,,,,,,
+TRA10P003,Tradescantia,46,2158,si,maceta negra 10 pulgadas|maceta negra 6 pulgadas,,,,,,,,
+TEC20L129,Tecoma,7,1276,si,bolsa 20 litros|bolsa 60 litros|bolsa 12 litros,,,,,,,,
+TEJ04L077,Tejocote,12,124,no,bolsa 4 litros,,,,,,,,
+TEL10P006,Telefono,61,1868,si,maceta negra 10 pulgadas|maceta negra 6 pulgadas,,,,,,,,
+THE80L145,Thevetia,4,0,no,bolsa 80 litros,,,,,,,,
+THI60L145,Tabebuia Hippie-1650 (Guayacan,2,1,no,bolsa 60 litros,,,,,,,,
+TLI07L128,Te Limon,3,167,no,bolsa 7 litros,,,,,,,,
+TOR01L125,Toronjil,20,1412,si,bolsa 1 litros,,,,,,,,
+TOR10L013,Toronja Sangria,19,1,no,bolsa 10 litros,,,,,,,,
+TPA10P006,Telefono Panda,24,335,si,maceta negra 10 pulgadas,,,,,,,,
+TTE03L112,Trueno Texano,23,121,no,bolsa 3 litros,,,,,,,,
+TUL04L010,Tulipan Arcoiris,53,1569,si,bolsa 4 litros,,,,,,,,
+TUL04L164,Tulipan,180,2248,si,bolsa 4 litros,,,,,,,,
+TUL10P134,Tule,1,1,no,maceta negra 10 pulgadas,,,,,,,,
+TUL20L132,Tulia,11,3,no,bolsa 20 litros,,,,,,,,
+TUL30L013,Tulia Dorada,22,9,no,bolsa 30 litros,,,,,,,,
+TUL60L170,Tulipan De La India Ama,9,14,no,bolsa 60 litros,,,,,,,,
+USE06P127,Uña De Señorita,52,2928,si,maceta negra 6 pulgadas,,,,,,,,
+UVA08L077,Uva De Mar,5,2195,si,bolsa 8 litros,,,,,,,,
+VIT10L010,Vitex,31,2486,si,bolsa 10 litros|bolsa 2 litros|bolsa 20 litros|bolsa 15 litros,,,,,,,,
+VAF04P003,Violeta Africana,13,3024,si,maceta negra 4 pulgadas,,,,,,,,
+VAL10L153,Valeriana,33,188,no,bolsa 10 litros|bolsa 15 litros,,,,,,,,
+VER01L124,Veronica Morada,18,333,si,bolsa 1 litros,,,,,,,,
+VER01L125,Verbena,8,98,no,bolsa 1 litros,,,,,,,,
+VIN06P109,Vinca,50,1177,si,maceta negra 6 pulgadas|bolsa 1 litros,,,,,,,,
+VSU03L105,Viburnio,48,1093,si,bolsa 3 litros|bolsa 30 litros|bolsa 20 litros|bolsa 15 litros,,,,,,,,
+VRE03P126,Vampire Red,9,23,no,maceta negra 3 pulgadas,,,,,,,,
+WIS12P130,Wisteria,4,36,no,maceta negra 12 pulgadas,,,,,,,,
+YUC15L170,Yuca,5,1,no,bolsa 15 litros,,,,,,,,
+ZAM45L152,Zapote Amarillo,1,1,no,bolsa 45 litros,,,,,,,,
+ZAP04L115,Zapote Negro,10,0,no,bolsa 4 litros,,,,,,,,
+ZAR05L130,Zarzamora,44,2868,si,bolsa 5 litros,,,,,,,,
