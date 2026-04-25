@@ -2,17 +2,21 @@
 plant_agent.py — Agrega plantas a Firestore con imágenes generadas por Gemini.
 
 Uso:
-  python plant_agent.py                  # usa lista hardcodeada (5 plantas)
-  python plant_agent.py plantas.csv      # lee desde CSV/TXT
+  python plant_agent.py                              # usa plantas_para_agente.csv
+  python plant_agent.py plantas_para_agente.csv      # ruta explícita
 
 Formato CSV (encabezado requerido):
-  nombre,sku,ventas,variaciones
-  Monstera deliciosa,PLT-001,342,bolsa 10 litros|maceta 8 pulgadas
+  SKU,nombre_limpio,Existencia,Ventas,Popular,variaciones
+  PLT-001,Monstera Deliciosa,12,342,si,bolsa 10 litros|maceta 8 pulgadas
 
 Env vars requeridas:
   ANTHROPIC_API_KEY
-  FIREBASE_SERVICE_ACCOUNT  (path al JSON de service account)
   GEMINI_API_KEY
+  FIREBASE_SERVICE_ACCOUNT
+  CLOUDINARY_CLOUD_NAME
+  CLOUDINARY_API_KEY
+  CLOUDINARY_API_SECRET
+  UMBRAL_POPULAR (opcional, default 2000)
 
 Dependencias:
   pip install firebase-admin anthropic google-genai python-slugify python-dotenv cloudinary
@@ -23,6 +27,7 @@ import json
 import os
 import sys
 import time
+import traceback
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -41,22 +46,18 @@ from google.genai import types
 # Configuración
 # ---------------------------------------------------------------------------
 
-UMBRAL_POPULAR = 200  # plantas con ventas > este valor reciben etiqueta "popular"
+DEFAULT_CSV = "plantas_para_agente.csv"
+LIMIT_ROWS = 5
+UMBRAL_POPULAR = int(os.environ.get("UMBRAL_POPULAR", "2000"))
 
-PLANTS_DEFAULT = [
-    {"nombre": "Monstera deliciosa", "sku": "PLT-001", "ventas": 342, "variaciones": ["bolsa 10 litros", "maceta 8 pulgadas"]},
-    {"nombre": "Lavanda",            "sku": "PLT-002", "ventas":  89, "variaciones": ["bolsa 10 litros", "maceta 8 pulgadas"]},
-    {"nombre": "Cactus San Pedro",   "sku": "PLT-003", "ventas": 201, "variaciones": ["bolsa 10 litros", "maceta 8 pulgadas"]},
-    {"nombre": "Pothos dorado",      "sku": "PLT-004", "ventas": 415, "variaciones": ["bolsa 10 litros", "maceta 8 pulgadas"]},
-    {"nombre": "Ficus lyrata",       "sku": "PLT-005", "ventas":  54, "variaciones": ["bolsa 10 litros", "maceta 8 pulgadas"]},
-]
+LOG_PATH = "proceso_log.csv"
 
 VALID = {
-    "categoria":   {"ornamental", "suculenta", "árbol", "interior", "exterior", "medicinal"},
-    "luz":         {"sol directo", "luz indirecta", "media sombra", "sombra"},
-    "riego":       {"bajo", "medio", "alto"},
-    "cuidado":     {"fácil", "intermedio", "difícil"},
-    "mascotas":    {"tóxica", "no tóxica"},
+    "categoria":      {"ornamental", "suculenta", "árbol", "interior", "exterior", "medicinal"},
+    "luz":            {"sol directo", "luz indirecta", "media sombra", "sombra"},
+    "riego":          {"bajo", "medio", "alto"},
+    "cuidado":        {"fácil", "intermedio", "difícil"},
+    "mascotas":       {"tóxica", "no tóxica"},
     "disponibilidad": {"disponible"},
 }
 
@@ -65,6 +66,7 @@ Cuando te pida información sobre una planta, investígala con web_search y devu
 ÚNICAMENTE un objeto JSON válido (sin markdown, sin texto extra) con estos campos:
 
 {
+  "identificada": true | false,
   "nombreCientifico": "string",
   "descripcion": "string — 2 o 3 oraciones descriptivas en español",
   "categoria": "ornamental | suculenta | árbol | interior | exterior | medicinal",
@@ -72,38 +74,54 @@ Cuando te pida información sobre una planta, investígala con web_search y devu
   "riego": "bajo | medio | alto",
   "cuidado": "fácil | intermedio | difícil",
   "mascotas": "tóxica | no tóxica",
-  "etiquetas": ["array de strings en español, 3-6 etiquetas"]
+  "etiquetas": ["array de strings en español, 3-6 etiquetas relevantes"]
 }
 
-Usa exactamente los valores del enum para cada campo."""
+Reglas:
+- Si NO puedes identificar con confianza la planta por el nombre dado, o el nombre
+  es ambiguo o no corresponde a una planta real, devuelve:
+  {"identificada": false, "razon": "explicación breve"}
+- Usa exactamente los valores del enum para cada campo.
+- No inventes datos: si dudas, devuelve identificada=false.
+"""
 
 CLOUDINARY_FOLDER = "plantas"
 
 
+# ---------------------------------------------------------------------------
+# CSV loading
+# ---------------------------------------------------------------------------
+
 def load_plants_from_csv(path: str) -> list[dict]:
-    """Lee plantas desde CSV con columnas: nombre, sku, ventas, variaciones."""
     plants = []
-    with open(path, newline="", encoding="utf-8") as f:
+    with open(path, newline="", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f, skipinitialspace=True)
         for i, row in enumerate(reader, start=2):
-            nombre = row.get("nombre", "").strip()
-            sku = row.get("sku", "").strip()
-            if not nombre or not sku:
-                print(f"  [WARN] Fila {i} ignorada: nombre o sku vacío")
+            sku = (row.get("SKU") or "").strip()
+            nombre = (row.get("nombre_limpio") or "").strip()
+            if not sku or not nombre:
+                print(f"  [WARN] Fila {i} ignorada: SKU o nombre_limpio vacío")
                 continue
             try:
-                ventas = int(row.get("ventas", "0").strip())
+                ventas = int(float((row.get("Ventas") or "0").strip() or "0"))
             except ValueError:
-                print(f"  [WARN] Fila {i} ventas inválidas -> 0")
                 ventas = 0
-            variaciones_raw = row.get("variaciones", "").strip()
+            popular_raw = (row.get("Popular") or "").strip().lower()
+            popular = popular_raw in ("si", "sí", "yes", "true", "1")
+            variaciones_raw = (row.get("variaciones") or "").strip()
             variaciones = [v.strip() for v in variaciones_raw.split("|") if v.strip()]
-            plants.append({"nombre": nombre, "sku": sku, "ventas": ventas, "variaciones": variaciones})
+            plants.append({
+                "sku": sku,
+                "nombre": nombre,
+                "ventas": ventas,
+                "popular": popular,
+                "variaciones": variaciones,
+            })
     return plants
 
 
 # ---------------------------------------------------------------------------
-# Inicialización de clientes
+# Inicialización
 # ---------------------------------------------------------------------------
 
 def init_clients():
@@ -125,24 +143,24 @@ def init_clients():
     db = firestore.client()
     ant = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
     gem = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
-
     return db, ant, gem
 
 
 # ---------------------------------------------------------------------------
-# Paso 1: Investigar planta con Claude + web_search
+# Investigación con Claude Haiku + web_search
 # ---------------------------------------------------------------------------
 
-def research_plant(nombre: str, ant: anthropic.Anthropic) -> dict:
-    """Llama a Claude con web_search y devuelve dict con datos de la planta."""
-    print(f"  -> Investigando '{nombre}' con Claude + web_search ...")
+def research_plant(nombre: str, ant: anthropic.Anthropic) -> tuple[dict, int, int]:
+    """Devuelve (data, input_tokens, output_tokens). data puede tener identificada=False."""
+    print(f"  -> Investigando '{nombre}' con Claude Haiku + web_search ...")
 
-    messages = [
-        {
-            "role": "user",
-            "content": f"Investiga la planta llamada '{nombre}' y devuelve el JSON solicitado.",
-        }
-    ]
+    messages = [{
+        "role": "user",
+        "content": f"Investiga la planta llamada '{nombre}' y devuelve el JSON solicitado.",
+    }]
+
+    in_tokens = 0
+    out_tokens = 0
 
     for attempt in range(5):
         response = ant.messages.create(
@@ -152,6 +170,10 @@ def research_plant(nombre: str, ant: anthropic.Anthropic) -> dict:
             tools=[{"type": "web_search_20260209", "name": "web_search"}],
             messages=messages,
         )
+
+        if hasattr(response, "usage"):
+            in_tokens += getattr(response.usage, "input_tokens", 0) or 0
+            out_tokens += getattr(response.usage, "output_tokens", 0) or 0
 
         if response.stop_reason == "end_turn":
             for block in response.content:
@@ -163,27 +185,20 @@ def research_plant(nombre: str, ant: anthropic.Anthropic) -> dict:
                             text = text[4:]
                     text = text.strip()
                     if text.startswith("{"):
-                        return json.loads(text)
+                        return json.loads(text), in_tokens, out_tokens
             messages.append({"role": "assistant", "content": response.content})
-            messages.append({
-                "role": "user",
-                "content": "Continúa y entrega el JSON final ahora.",
-            })
+            messages.append({"role": "user", "content": "Continúa y entrega el JSON final ahora."})
 
         elif response.stop_reason == "pause_turn":
             messages.append({"role": "assistant", "content": response.content})
-            messages.append({
-                "role": "user",
-                "content": "Continúa y entrega el JSON final ahora.",
-            })
+            messages.append({"role": "user", "content": "Continúa y entrega el JSON final ahora."})
         else:
             raise ValueError(f"stop_reason inesperado: {response.stop_reason}")
 
-    raise RuntimeError(f"No se pudo obtener datos para '{nombre}' tras varios intentos.")
+    raise RuntimeError(f"No se pudo obtener JSON para '{nombre}' tras varios intentos.")
 
 
 def validate_plant_data(data: dict, nombre: str) -> dict:
-    """Valida y corrige campos con valores inválidos."""
     defaults = {
         "categoria": "ornamental",
         "luz":       "luz indirecta",
@@ -197,70 +212,77 @@ def validate_plant_data(data: dict, nombre: str) -> dict:
             continue
         val = data.get(campo, "")
         if val not in validos:
-            print(f"    [WARN] Campo '{campo}' inválido: '{val}' -> usando '{defaults[campo]}'")
+            print(f"    [WARN] Campo '{campo}' inválido: '{val}' -> '{defaults[campo]}'")
             data[campo] = defaults[campo]
 
     if not isinstance(data.get("etiquetas"), list):
         data["etiquetas"] = [nombre.lower()]
-
     return data
 
 
 # ---------------------------------------------------------------------------
-# Paso 2: Generar imagen con Gemini y subir a Cloudinary
+# Imagen con Gemini + Cloudinary
 # ---------------------------------------------------------------------------
 
-def generate_and_upload_image(nombre: str, nombre_cientifico: str, slug: str, gem: genai.Client) -> str:
-    """Genera imagen con Gemini, sube a Cloudinary y devuelve la URL segura."""
-    print(f"  -> Generando imagen con Gemini: '{nombre_cientifico}' ...")
+def pick_container(variaciones: list[str]) -> str:
+    """Devuelve 'maceta' si hay alguna variación maceta, else 'bolsa'."""
+    for v in variaciones:
+        if "maceta" in v.lower():
+            return "maceta"
+    return "bolsa"
 
-    prompt = (
-        f"High quality botanical photograph of {nombre_cientifico} ({nombre}), "
-        "studio lighting, white background, sharp focus, professional plant nursery photo."
-    )
 
+def generate_and_upload_image(nombre_cientifico: str, container: str,
+                              public_id: str, gem: genai.Client) -> str:
+    if container == "maceta":
+        prompt = (
+            f"professional botanical photo of {nombre_cientifico} in a plain black "
+            "plastic nursery pot, white background, studio lighting, high quality, "
+            "no decorations, no patterns"
+        )
+    else:
+        prompt = (
+            f"professional botanical photo of {nombre_cientifico} in a plain black "
+            "plastic nursery bag, white background, studio lighting, high quality, "
+            "no decorations, no patterns"
+        )
+
+    print(f"  -> Generando imagen ({container}) con Gemini ...")
     response = gem.models.generate_content(
         model="gemini-2.5-flash-image",
         contents=prompt,
-        config=types.GenerateContentConfig(
-            response_modalities=["IMAGE"],
-        ),
+        config=types.GenerateContentConfig(response_modalities=["IMAGE"]),
     )
 
     image_bytes = None
-    mime_type = "image/jpeg"
     for part in response.candidates[0].content.parts:
         if part.inline_data is not None:
             image_bytes = part.inline_data.data
-            mime_type = part.inline_data.mime_type or "image/jpeg"
             break
 
     if not image_bytes:
-        raise ValueError(f"Gemini no devolvió imagen para '{nombre}'")
+        raise ValueError("Gemini no devolvió imagen")
 
-    print(f"  -> Subiendo a Cloudinary: {CLOUDINARY_FOLDER}/{slug} ...")
+    print(f"  -> Subiendo a Cloudinary: {CLOUDINARY_FOLDER}/{public_id} ...")
     result = cloudinary.uploader.upload(
         image_bytes,
         folder=CLOUDINARY_FOLDER,
-        public_id=slug,
+        public_id=public_id,
         resource_type="image",
     )
     return result["secure_url"]
 
 
 # ---------------------------------------------------------------------------
-# Paso 3: Guardar documento en Firestore
+# Firestore
 # ---------------------------------------------------------------------------
 
-def save_to_firestore(nombre: str, sku: str, plant_data: dict, imagen_url: str,
-                      variaciones: list, db) -> str:
-    """Crea documento en colección 'plantas' y devuelve el ID del documento."""
-    nombre_slug = slugify(nombre)
-
+def save_to_firestore(plant: dict, plant_data: dict, imagen_url: str | None, db) -> str:
+    sku = plant["sku"]
     doc = {
-        "nombre":           nombre,
-        "nombreCientifico": plant_data.get("nombreCientifico", ""),
         "sku":              sku,
+        "nombre":           plant["nombre"],
+        "nombreCientifico": plant_data.get("nombreCientifico", ""),
         "descripcion":      plant_data.get("descripcion", ""),
         "categoria":        plant_data["categoria"],
         "luz":              plant_data["luz"],
@@ -268,16 +290,14 @@ def save_to_firestore(nombre: str, sku: str, plant_data: dict, imagen_url: str,
         "cuidado":          plant_data["cuidado"],
         "mascotas":         plant_data["mascotas"],
         "disponibilidad":   "disponible",
-        "sucursal":         "ambas",
         "vistas":           0,
         "etiquetas":        plant_data.get("etiquetas", []),
-        "variaciones":      variaciones,
-        "imagenes":         [imagen_url],
+        "variaciones":      plant["variaciones"],
+        "imagenes":         [imagen_url] if imagen_url else [],
     }
-
-    print(f"  -> Guardando en Firestore (ID: {nombre_slug}) ...")
-    db.collection("plantas").document(nombre_slug).set(doc)
-    return nombre_slug
+    print(f"  -> Guardando en Firestore (ID: {sku}) ...")
+    db.collection("plantas").document(sku).set(doc)
+    return sku
 
 
 # ---------------------------------------------------------------------------
@@ -287,64 +307,119 @@ def save_to_firestore(nombre: str, sku: str, plant_data: dict, imagen_url: str,
 def main():
     print("=== plant_agent.py ===\n")
 
-    if len(sys.argv) > 1:
-        csv_path = sys.argv[1]
-        if not os.path.isfile(csv_path):
-            sys.exit(f"[ERROR] Archivo no encontrado: {csv_path}")
-        plants = load_plants_from_csv(csv_path)
-        print(f"Cargadas {len(plants)} plantas desde '{csv_path}'\n")
-    else:
-        plants = PLANTS_DEFAULT
-        print(f"Usando lista por defecto ({len(plants)} plantas)\n")
+    csv_path = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_CSV
+    if not os.path.isfile(csv_path):
+        sys.exit(f"[ERROR] Archivo no encontrado: {csv_path}")
+
+    plants = load_plants_from_csv(csv_path)
+    print(f"Cargadas {len(plants)} plantas desde '{csv_path}'")
+
+    if LIMIT_ROWS:
+        plants = plants[:LIMIT_ROWS]
+        print(f"Procesando solo las primeras {len(plants)} (modo prueba)\n")
 
     db, ant, gem = init_clients()
 
-    results = []
+    log_rows = []
+    total_in = 0
+    total_out = 0
+    ok_count = 0
+    skip_count = 0
 
     for plant in plants:
-        nombre = plant["nombre"]
         sku = plant["sku"]
-        ventas = plant.get("ventas", 0)
-        print(f"\n[{sku}] Procesando: {nombre} (ventas: {ventas})")
+        nombre = plant["nombre"]
+        in_tok = 0
+        out_tok = 0
+        status = "saltada"
+        razon = ""
+
+        print(f"\n[{sku}] {nombre}")
 
         try:
             # 1. Investigar
-            raw_data = research_plant(nombre, ant)
-            plant_data = validate_plant_data(raw_data, nombre)
+            try:
+                raw_data, in_tok, out_tok = research_plant(nombre, ant)
+            except Exception as e:
+                razon = f"investigación falló: {e}"
+                raise
 
-            # Marcar como popular si supera el umbral
-            if ventas > UMBRAL_POPULAR:
-                if "popular" not in plant_data["etiquetas"]:
-                    plant_data["etiquetas"].append("popular")
-                print(f"    popular: si ({ventas} > {UMBRAL_POPULAR})")
+            if not raw_data.get("identificada", True):
+                razon = f"no identificada: {raw_data.get('razon', 'sin razón')}"
+                print(f"  [SKIP] {razon}")
             else:
-                print(f"    popular: no ({ventas} <= {UMBRAL_POPULAR})")
+                plant_data = validate_plant_data(raw_data, nombre)
 
-            print(f"    Categoria: {plant_data['categoria']} | Luz: {plant_data['luz']} | Riego: {plant_data['riego']}")
+                # Etiqueta popular: por columna Popular del CSV
+                if plant["popular"]:
+                    if "popular" not in plant_data["etiquetas"]:
+                        plant_data["etiquetas"].append("popular")
 
-            # 2. Generar imagen con Gemini y subir a Firebase Storage
-            nombre_slug = slugify(nombre)
-            imagen_url = generate_and_upload_image(nombre, plant_data["nombreCientifico"], nombre_slug, gem)
-            print(f"    URL imagen: {imagen_url}")
+                # 2. Imagen
+                container = pick_container(plant["variaciones"])
+                imagen_url = None
+                try:
+                    public_id = slugify(sku)
+                    imagen_url = generate_and_upload_image(
+                        plant_data["nombreCientifico"], container, public_id, gem
+                    )
+                except Exception as e:
+                    razon = f"imagen falló: {e}"
+                    print(f"  [SKIP planta] {razon}")
+                    raise
 
-            # 3. Guardar en Firestore
-            doc_id = save_to_firestore(nombre, sku, plant_data, imagen_url,
-                                       plant["variaciones"], db)
-            print(f"    OK Documento creado: plantas/{doc_id}")
+                # 3. Firestore
+                try:
+                    save_to_firestore(plant, plant_data, imagen_url, db)
+                except Exception as e:
+                    razon = f"firestore falló: {e}"
+                    raise
 
-            results.append({"nombre": nombre, "sku": sku, "doc_id": doc_id, "ok": True})
+                status = "ok"
+                ok_count += 1
+                print(f"  [OK] plantas/{sku}")
 
         except Exception as e:
-            print(f"    [ERROR] {e}")
-            results.append({"nombre": nombre, "sku": sku, "ok": False, "error": str(e)})
+            if not razon:
+                razon = f"error inesperado: {e}"
+            traceback.print_exc()
+
+        if status != "ok":
+            skip_count += 1
+
+        total_in += in_tok
+        total_out += out_tok
+        print(f"[{sku}] {nombre} -> {status} | tokens entrada: {in_tok} | tokens salida: {out_tok}")
+
+        log_rows.append({
+            "SKU": sku,
+            "nombre": nombre,
+            "status": status,
+            "razon": razon,
+            "tokens_entrada": in_tok,
+            "tokens_salida": out_tok,
+        })
 
         if plant != plants[-1]:
             time.sleep(2)
 
+    # Log CSV
+    with open(LOG_PATH, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["SKU", "nombre", "status", "razon",
+                                                "tokens_entrada", "tokens_salida"])
+        writer.writeheader()
+        writer.writerows(log_rows)
+
+    # Resumen
+    cost = (total_in / 1000) * 0.00025 + (total_out / 1000) * 0.00125
     print("\n=== Resumen ===")
-    for r in results:
-        estado = "OK" if r["ok"] else "XX"
-        print(f"  {estado} {r['sku']} {r['nombre']}" + (f" -> plantas/{r['doc_id']}" if r["ok"] else f" -> {r.get('error', '')}"))
+    print(f"Total procesadas: {len(plants)}")
+    print(f"Exitosas:         {ok_count}")
+    print(f"Saltadas:         {skip_count}")
+    print(f"Tokens entrada:   {total_in}")
+    print(f"Tokens salida:    {total_out}")
+    print(f"Costo estimado:   ${cost:.6f} USD (Haiku)")
+    print(f"Log guardado:     {LOG_PATH}")
 
 
 if __name__ == "__main__":
