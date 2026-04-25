@@ -10,7 +10,6 @@ Formato CSV (encabezado requerido):
   PLT-001,Monstera Deliciosa,12,342,si,bolsa 10 litros|maceta 8 pulgadas
 
 Env vars requeridas:
-  ANTHROPIC_API_KEY
   GEMINI_API_KEY
   FIREBASE_SERVICE_ACCOUNT
   CLOUDINARY_CLOUD_NAME
@@ -19,7 +18,7 @@ Env vars requeridas:
   UMBRAL_POPULAR (opcional, default 2000)
 
 Dependencias:
-  pip install firebase-admin anthropic google-genai python-slugify python-dotenv cloudinary
+  pip install firebase-admin google-genai python-slugify python-dotenv cloudinary
 """
 
 import csv
@@ -36,7 +35,6 @@ from slugify import slugify
 
 import cloudinary
 import cloudinary.uploader
-import anthropic
 import firebase_admin
 from firebase_admin import credentials, firestore
 from google import genai
@@ -62,7 +60,7 @@ VALID = {
 }
 
 SYSTEM_PROMPT = """Eres un experto botánico hispanohablante.
-Cuando te pida información sobre una planta, investígala con web_search y devuelve
+Cuando te pida información sobre una planta, investígala con Google Search y devuelve
 ÚNICAMENTE un objeto JSON válido (sin markdown, sin texto extra) con estos campos:
 
 {
@@ -125,7 +123,7 @@ def load_plants_from_csv(path: str) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 def init_clients():
-    required = ("ANTHROPIC_API_KEY", "FIREBASE_SERVICE_ACCOUNT", "GEMINI_API_KEY",
+    required = ("FIREBASE_SERVICE_ACCOUNT", "GEMINI_API_KEY",
                 "CLOUDINARY_CLOUD_NAME", "CLOUDINARY_API_KEY", "CLOUDINARY_API_SECRET")
     for var in required:
         if not os.environ.get(var):
@@ -141,61 +139,65 @@ def init_clients():
     )
 
     db = firestore.client()
-    ant = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
     gem = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
-    return db, ant, gem
+    return db, gem
 
 
 # ---------------------------------------------------------------------------
-# Investigación con Claude Haiku + web_search
+# Investigación con Gemini 1.5 Flash + Google Search grounding
 # ---------------------------------------------------------------------------
 
-def research_plant(nombre: str, ant: anthropic.Anthropic) -> tuple[dict, int, int]:
-    """Devuelve (data, input_tokens, output_tokens). data puede tener identificada=False."""
-    print(f"  -> Investigando '{nombre}' con Claude Haiku + web_search ...")
+def _extract_json(text: str) -> dict:
+    text = text.strip()
+    if text.startswith("```"):
+        text = text.split("```")[1]
+        if text.startswith("json"):
+            text = text[4:]
+    text = text.strip()
+    start = text.find("{")
+    end = text.rfind("}")
+    if start == -1 or end == -1:
+        raise ValueError(f"No JSON en respuesta: {text[:200]}")
+    return json.loads(text[start:end + 1])
 
-    messages = [{
-        "role": "user",
-        "content": f"Investiga la planta llamada '{nombre}' y devuelve el JSON solicitado.",
-    }]
+
+def research_plant(nombre: str, gem: genai.Client) -> tuple[dict, int, int]:
+    """Investiga planta con Gemini 1.5 Flash + Google Search grounding.
+    Devuelve (data, input_tokens, output_tokens). data puede tener identificada=False."""
+    print(f"  -> Investigando '{nombre}' con Gemini 1.5 Flash + Google Search ...")
+
+    prompt = (
+        f"{SYSTEM_PROMPT}\n\n"
+        f"Investiga la planta llamada '{nombre}' y devuelve el JSON solicitado."
+    )
+
+    config = types.GenerateContentConfig(
+        tools=[types.Tool(google_search_retrieval=types.GoogleSearchRetrieval())],
+        temperature=0.2,
+    )
+
+    response = gem.models.generate_content(
+        model="gemini-1.5-flash",
+        contents=prompt,
+        config=config,
+    )
 
     in_tokens = 0
     out_tokens = 0
+    if getattr(response, "usage_metadata", None):
+        in_tokens = getattr(response.usage_metadata, "prompt_token_count", 0) or 0
+        out_tokens = getattr(response.usage_metadata, "candidates_token_count", 0) or 0
 
-    for attempt in range(5):
-        response = ant.messages.create(
-            model="claude-haiku-4-5-20251001",
-            max_tokens=1024,
-            system=SYSTEM_PROMPT,
-            tools=[{"type": "web_search_20260209", "name": "web_search"}],
-            messages=messages,
-        )
+    text_chunks = []
+    for cand in response.candidates or []:
+        for part in (cand.content.parts if cand.content else []):
+            if getattr(part, "text", None):
+                text_chunks.append(part.text)
+    full_text = "\n".join(text_chunks).strip()
+    if not full_text:
+        raise RuntimeError(f"Gemini no devolvió texto para '{nombre}'")
 
-        if hasattr(response, "usage"):
-            in_tokens += getattr(response.usage, "input_tokens", 0) or 0
-            out_tokens += getattr(response.usage, "output_tokens", 0) or 0
-
-        if response.stop_reason == "end_turn":
-            for block in response.content:
-                if hasattr(block, "text") and block.text.strip():
-                    text = block.text.strip()
-                    if text.startswith("```"):
-                        text = text.split("```")[1]
-                        if text.startswith("json"):
-                            text = text[4:]
-                    text = text.strip()
-                    if text.startswith("{"):
-                        return json.loads(text), in_tokens, out_tokens
-            messages.append({"role": "assistant", "content": response.content})
-            messages.append({"role": "user", "content": "Continúa y entrega el JSON final ahora."})
-
-        elif response.stop_reason == "pause_turn":
-            messages.append({"role": "assistant", "content": response.content})
-            messages.append({"role": "user", "content": "Continúa y entrega el JSON final ahora."})
-        else:
-            raise ValueError(f"stop_reason inesperado: {response.stop_reason}")
-
-    raise RuntimeError(f"No se pudo obtener JSON para '{nombre}' tras varios intentos.")
+    return _extract_json(full_text), in_tokens, out_tokens
 
 
 def validate_plant_data(data: dict, nombre: str) -> dict:
@@ -318,7 +320,7 @@ def main():
         plants = plants[:LIMIT_ROWS]
         print(f"Procesando solo las primeras {len(plants)} (modo prueba)\n")
 
-    db, ant, gem = init_clients()
+    db, gem = init_clients()
 
     log_rows = []
     total_in = 0
@@ -339,7 +341,7 @@ def main():
         try:
             # 1. Investigar
             try:
-                raw_data, in_tok, out_tok = research_plant(nombre, ant)
+                raw_data, in_tok, out_tok = research_plant(nombre, gem)
             except Exception as e:
                 razon = f"investigación falló: {e}"
                 raise
@@ -411,14 +413,14 @@ def main():
         writer.writerows(log_rows)
 
     # Resumen
-    cost = (total_in / 1000) * 0.00025 + (total_out / 1000) * 0.00125
+    cost = (total_in / 1_000_000) * 0.075 + (total_out / 1_000_000) * 0.30
     print("\n=== Resumen ===")
     print(f"Total procesadas: {len(plants)}")
     print(f"Exitosas:         {ok_count}")
     print(f"Saltadas:         {skip_count}")
     print(f"Tokens entrada:   {total_in}")
     print(f"Tokens salida:    {total_out}")
-    print(f"Costo estimado:   ${cost:.6f} USD (Haiku)")
+    print(f"Costo estimado:   ${cost:.6f} USD (Gemini 1.5 Flash, sin grounding fees)")
     print(f"Log guardado:     {LOG_PATH}")
 
 
